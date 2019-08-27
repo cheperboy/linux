@@ -1,3 +1,54 @@
+# Commands
+
+**Interfaces**  
+`lsusb`  Liste les périphériques USB  
+`dmesg | grep tty` Trouver le nom du périphérique série qui vient d’être branché  
+
+**Files**  
+`sudo chown pi mydb.db` Le propriétaire du fichier mydb.db devient l’utilisateur “pi”  
+`chmod a+x run.py` rend le fichier exécutable (change les permissions)  
+`stat -c "%a %n" file.txt` to see file permission in octal (777..)  
+
+**processus**  
+`ps auxf` List all processes  
+`kill -9 $(lsof -ti tcp:5007)` socket.error: [Errno 98] Address already in use. tue le processus serveur qui écoute le port 5007  
+`killall -9 chromium-browse` Kill a process by name  
+
+**server / ports**  
+`sudo netstat -tulpn` Show servers and port listenning  
+
+**disk usage**  
+`du -xksh ./* | sort -n` Espace utilisé  
+`du -hs`  
+`df -h`  
+`cat /proc/meminfo` : affiche l’état d’utilisation de la mémoire  
+
+**copy / moove**  
+`cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
+`mv source/ dest/` Déplace le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
+`rm -r dir/` supprime le répertoire “dir” et son contenu  
+
+# Files permissions
+	User, Group, Others
+	0 No permission 
+	1 Execute permission 
+	2 Write permission 
+	3 Execute and write permission: 1 (execute) + 2 (write) = 3 
+	4 Read permission 
+	5 Read and execute permission: 4 (read) + 1 (execute) = 5 
+	6 Read and write permission: 4 (read) + 2 (write) = 6 
+	7 All permissions: 4 (read) + 2 (write) + 1 (execute) = 7
+
+**default permission**  
+	files 644  
+	directory 755 (execute means ability to cd into the directory)
+
+To change all the directories to 755 (drwxr-xr-x):  
+`find /opt/lampp/htdocs -type d -exec chmod 755 {} \;`  
+To change all the files to 644 (-rw-r--r--):  
+`find /opt/lampp/htdocs -type f -exec chmod 644 {} \;`  
+
+
 # .bashrc
 
 ``` bash
@@ -52,7 +103,29 @@ To do this on startup, edit /etc/fstab:
 ```
 
 ## Samba
-[turn-your-raspberry-pi-into-a-nas-box/](https://www.makeuseof.com/tag/turn-your-raspberry-pi-into-a-nas-box/)
+[turn-your-raspberry-pi-into-a-nas-box/](https://www.makeuseof.com/tag/turn-your-raspberry-pi-into-a-nas-box/)  
+[share a directory](http://www.framboise314.fr/partager-un-repertoire-sous-jessie-avec-samba/)
+
+`sudo apt-get install samba samba-common-bin`  
+`sudo nano /etc/samba/smb.conf`  
+To add at the end of smb.conf :  
+``` bash
+[Partage]
+comment = Partage Samba sur Raspberry Pi
+path = /home/pi/partage
+writable = yes
+guest ok = yes
+guest only = yes
+create mode = 0777
+directory mode = 0777
+share modes = yes
+force user = pi
+force group = pi
+```
+
+Restart service  
+`sudo systemctl restart smbd.service`
+
 
 # Backup
 ## rsync (synchronize / mirror)
