@@ -1,6 +1,6 @@
 # .bashrc
 
-``` shell
+``` bash
 # cd to a dir and list all files 
 function cs {
 	builtin cd "$@" && ls -F
@@ -32,86 +32,78 @@ alias prod='cd /home/pi/Prod/'
 # lsblk     	#list devices with mount points
 ```
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
 
-## Commands
+# File Sharing
+## NFS
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+https://help.ubuntu.com/community/SettingUpNFSHowTo
 
-## Project layout
+### Mount NFS drive (synology) from linux (NFSV4 client)
 
-	arduino_due/    			# Not used (replaced by ADS1115).
-	
-	config/						# Supervisor, nginx, cron, raspbian configuration files
-		dev/
-		prod/  			
-	
-	hardware/					# Fritzing and schematic design files
-	
-	install/					# installation scripts (Shell)
-		hardware.sh				# Configure raspbian modules
-		install-system.sh		# apt-get update upgrade install python virtualenv...
-		install-chaudiere.sh	# Create venv, configure nginx supervisor and cron, start server
-	
-	logger/						# Logger config for python scripts
-	
-	sensor/						# Interface with temperature and current sensors
-		get_watt.py				# Retrieve current sensor values (i2c via ADS1115)
-		get_temp.py				# Retrieve temperature sensor values from DS18b20 (1wire)
-		create_data.py			# Call get_watt.py and get_temp.py and create record in Chaudiere database
-		...						# Other python scripts not used anymore (arduino due)
-	
-	gui.sh						# Shell script to launch Chromium for local display
-	
-	mkdocs.yml					# Mkdocs configuration
-	docs/						# Markdown wiki pushed to readthedocs
+``` bash
+sudo mkdir /media/nas
+sudo mount -t nfs -o proto=tcp,port=2049 192.168.1.52:/volume1/hpsrv-backup /media/nas
+sudo chmod xxx /media/nas
+```
 
-	flask_app/					
-		app/					# Flask package
-		scripts/				# Python scripts to process asynchronous tasks
-			archive_minute.py	# called every minute by cron
-			process_phase.py	# called every minute by cron
-		manager.py				# Command Line Interface (production)
-		cli_stuff.py			# Command Line Interface (dev / debug)
-		config.py				# Environnement variables configuration
-		db_api.py				# database API called by external script create_data.py
-		main.py					# To run Flask app in debug mode (python3 main.py)
-		wsgi_gunicorn.py		# To run Flask app in production mode
-		requirements.txt		# List of python packages (pip3 install -r requirements.txt) 
-		send_email_sms.py		# Script for alerts tasks
-		util.py					# Datetime utilities
+To do this on startup, edit /etc/fstab:
+``` bash
+<nfs-server-IP>:/   /mnt   nfs    auto  0  0
+```
 
-## Flask app package layout
+## Samba
+[turn-your-raspberry-pi-into-a-nas-box/](https://www.makeuseof.com/tag/turn-your-raspberry-pi-into-a-nas-box/)
 
-	flask_app/					
-		app/					
-			__init__.py					# create_app() and set_config()
-			constantes.py				# Constantes used for charts and database
-			admin/						# Admin Blueprint
-				forms.py
-				system_info.py
-				views.py
-			views/						
-				charts/					# charts Blueprint
-					views.py
-					charts.py
-					history_form.py
-				auth.py					# Auth Blueprint
-				webapi.py				# webapi Blueprint (retrieve charts data)
-				monitor.py
-			helpers/					# not used
-			models/
-			static/
-				favicon.ico
-				js/
-					custom_highstock.js
-			templates/
-	
-	
-	
-	
-	
-	
+# Backup
+## rsync (synchronize / mirror)
+Synchronize datas from media 1 to media 2
+``` bash
+sudo apt-get install rsync
+rsync -av --delete /media/1/shares /media/2/shares/
+```
+
+Run this command every day at 5h00
+``` bash
+crontab -e
+30 5 * * * rsync -av --delete /media/1/shares /media/2/shares/
+```
+
+tuto :  
+- [raspberry](https://www.vdsar.net/rsync-backup-synology-remote-raspberry-pi/)  
+- [synology](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Backup_Restore/How_to_back_up_Linux_computer_to_Synology_NAS)
+
+
+# Administration
+
+## ssh
+
+## webmin
+
+installation (ubuntu 18)
+
+``` bash
+sudo sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
+wget -qO - http://www.webmin.com/jcameron-key.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install webmin
+sudo ufw allow 10000/tcp
+```
+[https://localhost:10000](https://localhost:10000)
+
+# Security
+
+## Firewall (UFW)
+
+>	/!\ Do not enable if webmin is active on the system  	
+
+`sudo ufw status verbose`
+
+https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/
+```
+## fail2ban
+`sudo apt-get install fail2ban`
+
+# Log
+`journalctl -u motioneye > motioneye.log` Export log to a file  
+`journalctl -n 20` Show last 20 lines of system log  
+`journalctl -f` show live log  
