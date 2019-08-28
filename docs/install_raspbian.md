@@ -72,7 +72,7 @@ NEXMO need cryptographie and cffi
 
 ## bashrc
 `nano ~/.bashrc`
-```shell
+``` shell
 # ls alias
 alias ll='ls -l'
 alias la='ls -A'
