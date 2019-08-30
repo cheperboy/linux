@@ -18,6 +18,7 @@ nav:
     - Bash: bash.md
     - Raspberry: raspberry.md
     - Security: security.md
+    - Python script template: python_script_template.md
 
 
 markdown_extensions:
