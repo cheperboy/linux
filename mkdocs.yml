@@ -5,6 +5,7 @@ docs_dir: docs/
 # theme: readthedocs
 theme:
   name: 'material'
+  # name: 'readthedocs'
   language: 'en'
   palette:
     primary: 'indigo'
@@ -32,7 +33,9 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - footnotes
-  
+  - markdown_include.include:
+      base_path: scripts  
+
 extra_css:
   - https://unpkg.com/mermaid@7.1.2/dist/mermaid.css
 extra_javascript:

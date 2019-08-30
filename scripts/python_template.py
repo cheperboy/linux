@@ -1,4 +1,3 @@
-``` python
 #!/usr/bin/env python
 
 # Python 3 script template
@@ -94,5 +93,3 @@ def my_function(input_file, destination, value, my_bool):
 
 if __name__ == '__main__':
     my_function()
-
-```
