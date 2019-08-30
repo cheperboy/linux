@@ -1,7 +1,7 @@
 ## Pinout
 
 
-[![pinout.xyz](img/rpi_pinout.png)](https://pinout.xyz/)
+[![pinout.xyz](rpi_pinout.png)](https://pinout.xyz/)
 
 ## I2C
 
