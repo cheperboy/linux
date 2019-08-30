@@ -1,8 +1,40 @@
 site_name: Linux wiki
-theme: readthedocs
-repo_url: https://github.com/cheperboy/linux/
+repo_url: https://github.com/cheperboy/chaudiere/
 docs_dir: docs/ 
+
+# theme: readthedocs
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  
 nav:
     - Home: index.md
     - Bash: bash.md
+    - Raspberry: raspberry.md
+    - Security: security.md
 
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - footnotes
+  
+extra_css:
+  - https://unpkg.com/mermaid@7.1.2/dist/mermaid.css
+extra_javascript:
+  - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
+
+  
