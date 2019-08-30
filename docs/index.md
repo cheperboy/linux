@@ -1,4 +1,4 @@
-# Commands
+## Commands
 
 **Interfaces**  
 `lsusb`  Liste les périphériques USB  
@@ -28,7 +28,7 @@
 `mv source/ dest/` Déplace le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
 `rm -r dir/` supprime le répertoire “dir” et son contenu  
 
-# Files permissions
+## Files permissions
 	User, Group, Others
 	0 No permission 
 	1 Execute permission 
@@ -49,47 +49,47 @@ To change all the files to 644 (-rw-r--r--):
 `find /opt/lampp/htdocs -type f -exec chmod 644 {} \;`  
 
 
-# .bashrc
+## .bashrc
 
 ``` bash
-# cd to a dir and list all files 
+## cd to a dir and list all files 
 function cs {
 	builtin cd "$@" && ls -F
 }
 
-# aliases directories
+## aliases directories
 alias ..='cd ..'
 alias ls='ls -CF'
 alias la='ls -la'
-alias lr='ls -Rh' # list recursively
+alias lr='ls -Rh' ## list recursively
 
-# python
+## python
 alias python=python3
 alias pip=pip3
 
-# aliases others
+## aliases others
 alias top='htop'
 
-# other alias
+## other alias
 alias dev='cd /home/pi/Dev/'
 alias prod='cd /home/pi/Prod/'
 
-# load virtualenvwrapper for python (after custom PATHs)
-# export WORKON_HOME=~/Envs
-# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# source /home/pi/.local/bin/virtualenvwrapper.sh
+## load virtualenvwrapper for python (after custom PATHs)
+## export WORKON_HOME=~/Envs
+## export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+## source /home/pi/.local/bin/virtualenvwrapper.sh
 
-# Usefull commands
-# lsblk     	#list devices with mount points
+## Usefull commands
+## lsblk     	#list devices with mount points
 ```
 
 
-# File Sharing
-## NFS
+## File Sharing
+### NFS
 
 https://help.ubuntu.com/community/SettingUpNFSHowTo
 
-### Mount NFS drive (synology) from linux (NFSV4 client)
+#### Mount NFS drive (synology) from linux (NFSV4 client)
 
 ``` bash
 sudo mkdir /media/nas
@@ -102,7 +102,7 @@ To do this on startup, edit /etc/fstab:
 <nfs-server-IP>:/   /mnt   nfs    auto  0  0
 ```
 
-## Samba
+### Samba
 [turn-your-raspberry-pi-into-a-nas-box/](https://www.makeuseof.com/tag/turn-your-raspberry-pi-into-a-nas-box/)  
 [share a directory](http://www.framboise314.fr/partager-un-repertoire-sous-jessie-avec-samba/)
 
@@ -127,8 +127,8 @@ Restart service
 `sudo systemctl restart smbd.service`
 
 
-# Backup
-## rsync (synchronize / mirror)
+## Backup
+### rsync (synchronize / mirror)
 Synchronize datas from media 1 to media 2
 ``` bash
 sudo apt-get install rsync
@@ -146,11 +146,11 @@ tuto :
 - [synology](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Backup_Restore/How_to_back_up_Linux_computer_to_Synology_NAS)
 
 
-# Administration
+## Administration
 
-## ssh
+### ssh
 
-## webmin
+### webmin
 
 installation (ubuntu 18)
 
@@ -163,20 +163,28 @@ sudo ufw allow 10000/tcp
 ```
 [https://localhost:10000](https://localhost:10000)
 
-# Security
+## Security
 
-## Firewall (UFW)
+### Firewall (UFW)
 
->	/!\ Do not enable if webmin is active on the system  	
+!!! Warning "Do not enable if webmin is active on the system"
 
 `sudo ufw status verbose`
 
 https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/
-```
-## fail2ban
+
+### fail2ban
 `sudo apt-get install fail2ban`
 
-# Log
-`journalctl -u motioneye > motioneye.log` Export log to a file  
-`journalctl -n 20` Show last 20 lines of system log  
-`journalctl -f` show live log  
+## Log
+**main log files**  
+
+* `/var/log/syslog` - main log file for all services
+* `/var/log/message` - whole systems log file
+* `/var/log/auth.log` - all authentication attempts are logged here
+
+**usefull commands**  
+
+* `journalctl -u motioneye > motioneye.log` Export log to a file  
+* `journalctl -n 20` Show last 20 lines of system log  
+* `journalctl -f` show live log  
