@@ -21,6 +21,7 @@ nav:
     - Security: security.md
     - Dev tools: dev.md
     - Python script template: python_script_template.md
+    - bashrc template: bashrc template.md
 
 
 markdown_extensions:

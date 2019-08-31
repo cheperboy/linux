@@ -51,38 +51,9 @@ To change all the files to 644 (-rw-r--r--):
 
 ## .bashrc
 
-``` bash
-## cd to a dir and list all files 
-function cs {
-	builtin cd "$@" && ls -F
-}
-
-## aliases directories
-alias ..='cd ..'
-alias ls='ls -CF'
-alias la='ls -la'
-alias lr='ls -Rh' ## list recursively
-
-## python
-alias python=python3
-alias pip=pip3
-
-## aliases others
-alias top='htop'
-
-## other alias
-alias dev='cd /home/pi/Dev/'
-alias prod='cd /home/pi/Prod/'
-
-## load virtualenvwrapper for python (after custom PATHs)
-## export WORKON_HOME=~/Envs
-## export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-## source /home/pi/.local/bin/virtualenvwrapper.sh
-
-## Usefull commands
-## lsblk     	#list devices with mount points
+``` sh
+{!.bashrc_!}
 ```
-
 
 ## File Sharing
 ### NFS
