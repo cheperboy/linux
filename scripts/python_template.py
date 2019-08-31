@@ -59,7 +59,7 @@ def calculate_with_exception_handling(my_int):
         else:
             print(f'{MY_CONSTANT}/{my_int} = {resultat}')
     else:
-        raise IOError # Raise an exception to be catch at higher level !
+        raise IOError # exemple of how to Raise an exception to be catch at higher level !
 
 
 @click.command()

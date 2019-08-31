@@ -5,9 +5,10 @@ function cs {
 
 ## aliases directories
 alias ..='cd ..'
-alias ls='ls -CF'
-alias la='ls -la'
-alias lr='ls -Rh' ## list recursively
+alias l='ls -CFA'
+alias ll='ls -A'
+alias la='ls -lA'
+alias lr='ls -lAR' ## list recursively
 
 ## python
 alias python=python3

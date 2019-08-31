@@ -26,7 +26,7 @@ Fetch latests changes from origin, does not merge
     
 Pull latest changes from origin and merge
     
-    git merge
+    git pull
 
 **Publish**
 
