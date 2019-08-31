@@ -19,6 +19,7 @@ nav:
     - Bash: bash.md
     - Raspberry: raspberry.md
     - Security: security.md
+    - Dev tools: dev.md
     - Python script template: python_script_template.md
 
 
