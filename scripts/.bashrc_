@@ -5,9 +5,10 @@ function cs {
 
 ## aliases directories
 alias ..='cd ..'
-alias l='ls -CFA'
-alias ll='ls -A'
-alias la='ls -lA'
+
+alias l='ls -lA'
+alias ll='ls -CFA'
+alias la='ls -CFA'
 alias lr='ls -lAR' ## list recursively
 
 ## python
@@ -27,4 +28,6 @@ alias prod='cd /home/pi/Prod/'
 ## source /home/pi/.local/bin/virtualenvwrapper.sh
 
 ## Usefull commands
-## lsblk        #list devices with mount points
+# lsblk        # list devices with mount points
+# tree         # Tree representation
+# tree -d      # Tree representation, directories only
