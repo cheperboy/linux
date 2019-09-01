@@ -1,8 +1,9 @@
-## Commands
+## Usefull Commands
 
 **Interfaces**  
 `lsusb`  Liste les périphériques USB  
 `dmesg | grep tty` Trouver le nom du périphérique série qui vient d’être branché  
+`lsblk` List devices with mount points
 
 **Files**  
 `sudo chown pi mydb.db` Le propriétaire du fichier mydb.db devient l’utilisateur “pi”  
@@ -27,6 +28,11 @@
 `cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
 `mv source/ dest/` Déplace le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
 `rm -r dir/` supprime le répertoire “dir” et son contenu  
+
+**console**  
+`tree` Tree representation
+`tree -d` Tree representation, directories only
+
 
 ## Files permissions
 	User, Group, Others
@@ -159,3 +165,4 @@ https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/
 * `journalctl -u motioneye > motioneye.log` Export log to a file  
 * `journalctl -n 20` Show last 20 lines of system log  
 * `journalctl -f` show live log  
+* `tail -f my_log_file.log` show live log of custom file  
