@@ -1,7 +1,9 @@
 ## cd to a dir and list all files 
-function cs {
-    builtin cd "$@" && ls -F
-}
+function cs { builtin cd "$@" && ls -F ; }
+
+## Supervisorctl custom alias functions
+function start { sudo supervisorctl start "$@" ; }
+function stop { sudo supervisorctl stop "$@" ; }
 
 ## aliases directories
 alias ..='cd ..'
@@ -10,6 +12,13 @@ alias l='ls -lA'
 alias ll='ls -CFA'
 alias la='ls -CFA'
 alias lr='ls -lAR' ## list recursively
+
+## supervisor
+alias status='sudo supervisorctl status'
+alias reread='sudo supervisorctl reread'
+alias reload='sudo supervisorctl reload'
+alias start_all='sudo supervisorctl start all'
+alias stop_all='sudo supervisorctl stop all'
 
 ## python
 alias python=python3
