@@ -166,3 +166,4 @@ https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/
 * `journalctl -n 20` Show last 20 lines of system log  
 * `journalctl -f` show live log  
 * `tail -f my_log_file.log` show live log of custom file  
+* `tail -f log/*` show live log of all files in log/ directory  
