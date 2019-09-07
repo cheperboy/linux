@@ -127,6 +127,11 @@ tuto :
 
 ### ssh
 
+*Configure ssh keys*  
+
+* https://kb.iu.edu/d/aews
+* https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/
+	
 ### webmin
 
 installation (ubuntu 18)

@@ -3,6 +3,7 @@ function cs { builtin cd "$@" && ls -F ; }
 
 ## Supervisorctl custom alias functions
 function start { sudo supervisorctl start "$@" ; }
+function restart { sudo supervisorctl restart "$@" ; }
 function stop { sudo supervisorctl stop "$@" ; }
 
 ## aliases directories
@@ -12,6 +13,12 @@ alias l='ls -lA'
 alias ll='ls -CFA'
 alias la='ls -CFA'
 alias lr='ls -lAR' ## list recursively
+
+## nginx
+alias nginx_status='sudo service nginx status'
+alias nginx_start='sudo service nginx start'
+alias nginx_restart='sudo service nginx restart'
+alias nginx_stop='sudo service nginx stop'
 
 ## supervisor
 alias status='sudo supervisorctl status'
