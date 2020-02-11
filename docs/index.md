@@ -85,9 +85,11 @@ To do this on startup, edit /etc/fstab:
 
 `sudo apt-get install samba samba-common-bin`  
 `sudo nano /etc/samba/smb.conf`  
+
+**Guest account (no password)**
 To add at the end of smb.conf :  
 ``` bash
-[Partage]
+[public]
 comment = Partage Samba sur Raspberry Pi
 path = /home/pi/partage
 writable = yes
@@ -100,8 +102,27 @@ force user = pi
 force group = pi
 ```
 
+**Private account**
+
+Create user 'pi' with the following command:
+`sudo smbpasswd -a pi`
+
+``` bash
+[private]
+comment = Dev_chaudiere
+path = /home/pi/private
+writable = yes
+create mode = 0777
+directory mode = 0777
+public = no
+```
+
 Restart service  
 `sudo systemctl restart smbd.service`
+
+From Windows PC  
+`\\server_ip\samba_share_name`
+
 
 
 ## Backup
