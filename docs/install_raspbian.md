@@ -38,7 +38,8 @@ network={
 # Configuration
 ## Hostname and password
 1.  Modify hostname, Edit `/etc/hostname`. Set to chaudiere (recognized on network as *chaudiere.local*)
-2.  Modify pi password `sudo passwd pi`
+2.  Also modify /etc/hosts to add `127.0.1.1 chaudiere.local`
+3.  Modify pi password `sudo passwd pi`
  
 ## Package install
 **Update/upgrade system and existing packages**
