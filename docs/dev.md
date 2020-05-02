@@ -34,3 +34,34 @@ Pull latest changes from origin and merge
 
     git commit -am "message"
     git push
+	
+## Colortail
+
+like tail with color
+
+	sudo apt-get install colortail
+	nano /etc/colortail.colortail.conf
+	colortail -f myapp.log
+	
+example conf for log files	
+
+``` sh
+# matches the word FOO
+# ^.*(FOO).*$
+
+COLOR brightred
+{
+^.*(CRITICAL).*$
+^.*(ERROR).*$
+}
+COLOR yellow
+{
+^.*(WARNING).*$
+}
+COLOR green
+{
+^.*(INFO).*$
+}
+
+```
+
