@@ -40,10 +40,12 @@ Pull latest changes from origin and merge
 like tail with color
 
 	sudo apt-get install colortail
-	nano /etc/colortail.colortail.conf
 	colortail -f myapp.log
 	
-example conf for log files	
+sample conf for log to add in colortail.conf
+
+	nano /etc/colortail/colortail.conf
+
 
 ``` sh
 # matches the word FOO
