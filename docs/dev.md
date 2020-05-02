@@ -67,3 +67,13 @@ COLOR green
 
 ```
 
+## Putty
+
+* [Themes](https://www.noobunbox.net/themes-pour-putty/theme-glacier-remix)
+* [MTPutty](https://ttyplus.com/multi-tabbed-putty/)
+ 
+## Python
+
+* [color log](https://medium.com/@galea/python-logging-example-with-color-formatting-file-handlers-6ee21d363184)
+ 
+ 
