@@ -55,11 +55,6 @@ To change all the files to 644 (-rw-r--r--):
 `find /opt/lampp/htdocs -type f -exec chmod 644 {} \;`  
 
 
-## .bashrc
-
-``` sh
-{!.bashrc_!}
-```
 
 ## File Sharing
 ### NFS
@@ -95,8 +90,8 @@ path = /home/pi/partage
 writable = yes
 guest ok = yes
 guest only = yes
-create mode = 0777
-directory mode = 0777
+;create mode = 0777
+;directory mode = 0777
 share modes = yes
 force user = pi
 force group = pi
@@ -152,6 +147,7 @@ tuto :
 
 * https://kb.iu.edu/d/aews
 * https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/
+* https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
 	
 ### webmin
 

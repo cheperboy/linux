@@ -1,3 +1,3 @@
 ``` sh
-{!.bashrc_!}
+{!bashrc.sh!}
 ```
