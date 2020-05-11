@@ -16,12 +16,13 @@ theme:
   
 nav:
     - Home: index.md
-    - Bash: bash.md
-    - Raspberry: raspberry.md
+    - Raspberry hardware: raspberry.md
+    - Raspberry install OS: raspberry_install_raspbian.md
     - Security: security.md
     - Dev tools: dev.md
     - Python script template: python_script_template.md
     - bashrc template: bashrc template.md
+    - Bash script: bash.md
 
 
 markdown_extensions:

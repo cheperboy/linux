@@ -4,6 +4,7 @@
 `lsusb`  Liste les périphériques USB  
 `dmesg | grep tty` Trouver le nom du périphérique série qui vient d’être branché  
 `lsblk` List devices with mount points
+`sudo iw wlan0 scan` Scan available wifi networks
 
 **Files**  
 `sudo chown pi mydb.db` Le propriétaire du fichier mydb.db devient l’utilisateur “pi”  
@@ -14,6 +15,8 @@
 `ps auxf` List all processes  
 `kill -9 $(lsof -ti tcp:5007)` socket.error: [Errno 98] Address already in use. tue le processus serveur qui écoute le port 5007  
 `killall -9 chromium-browse` Kill a process by name  
+`sudo netstat -ltnp` port listening
+`sudo netstat -ltnp | grep :port kill -9` port listening and killing zombie thread server
 
 **server / ports**  
 `sudo netstat -tulpn` Show servers and port listenning  
