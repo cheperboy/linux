@@ -57,8 +57,10 @@ network={
 `sudo apt-get -y install supervisor git python-pip nginx`
 
 `pip install virtualenv virtualenvwrapper`
+`mkvirtualenv whatever -p /usr/bin/python3`
 
-[tuto virtualenv](https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
+[tuto-1](https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
+ | [tuto-2](https://medium.com/@ronm333/virtual-environments-on-the-raspberry-pi-ead158a72cd5)
 
 **specific packages for chaudiere app**
 

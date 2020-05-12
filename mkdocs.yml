@@ -1,11 +1,11 @@
 site_name: Linux wiki
-repo_url: https://github.com/cheperboy/linux/
-docs_dir: docs/ 
+repo_url : https://github.com/cheperboy/linux/
+docs_dir : docs/ 
+dev_addr : 0.0.0.0:8002
 
 # theme: readthedocs
 theme:
   name: 'material'
-  # name: 'readthedocs'
   language: 'en'
   palette:
     primary: 'indigo'
@@ -19,9 +19,10 @@ nav:
     - Raspberry hardware: raspberry.md
     - Raspberry install OS: raspberry_install_raspbian.md
     - Security: security.md
-    - Dev tools: dev.md
+    - Python : python.md
     - Python script template: python_script_template.md
-    - bashrc template: bashrc template.md
+    - Dev tools: dev.md
+    - bashrc template: bashrc_template.md
     - Bash script: bash.md
 
 
@@ -37,11 +38,10 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
   - markdown_include.include:
-      base_path: scripts  
+      base_path: scripts
 
 extra_css:
   - https://unpkg.com/mermaid@7.1.2/dist/mermaid.css
 extra_javascript:
   - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
 
-  

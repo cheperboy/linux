@@ -1,3 +1,5 @@
+# Dev tools
+
 ## Git
 
 [interractive commands](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
@@ -72,29 +74,7 @@ COLOR green
 * [Themes](https://www.noobunbox.net/themes-pour-putty/theme-glacier-remix)
 * [MTPutty](https://ttyplus.com/multi-tabbed-putty/)
  
-## Python
-
-* [color log](https://medium.com/@galea/python-logging-example-with-color-formatting-file-handlers-6ee21d363184)
- 
-### Import beyond top level package
-
-``` python
-import sys
-from os.path import abspath as abspath
-from os.path import dirname as dirname
-from os.path import basename as basename
-from os.path import join    as join
-
-module_path  = abspath(dirname(__file__)) # /home/pi/Dev/home_alarm/src/nox_alarm
-src_path     = dirname(module_path)       # /home/pi/Dev/home_alarm/src
-sys.path.append(src_path)
-```
-
-### SQLAlchemy
-
-* [filters (like, or, in, ...)](http://www.leeladharan.com/sqlalchemy-query-with-or-and-like-common-filters)
-
-### Mkdocs
+## Mkdocs
 
 	mkdocs serve --dev-addr 0.0.0.0:8001
 
