@@ -1,7 +1,7 @@
 site_name: Linux wiki
 repo_url : https://github.com/cheperboy/linux/
 docs_dir : docs/ 
-dev_addr : 0.0.0.0:8002
+# dev_addr: 0.0.0.0:8002 # commented because fail compilation in production(readthedocs)
 
 # theme: readthedocs
 theme:

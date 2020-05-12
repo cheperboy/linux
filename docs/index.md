@@ -29,8 +29,9 @@
 
 **copy / moove**  
 `cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
-`mv source/ dest/` Déplace le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
-`rm -r dir/` supprime le répertoire “dir” et son contenu  
+`mv foo/ bar/` Déplace le répertoir `foo` et son contenu dans le répertoire `bar`. résultat: il existe un chemin `bar/foo/file.txt`
+`mv foo bar` Renomme le répertoir ou le fichier `foo` en `bar`  
+`rm -r dir/` supprime le répertoire `dir` et son contenu  
 
 **console**  
 `tree` Tree representation
