@@ -1,4 +1,12 @@
-# Redirection
+## Command line tools
+
+* [awesome-shell](https://github.com/alebcay/awesome-shell)
+* [sed](https://en.wikibooks.org/wiki/Sed)
+* [awk](https://en.wikibooks.org/wiki/AWK)
+* [grep](https://en.wikibooks.org/wiki/Grep)
+
+
+## Redirection
 
 [bash-one-liners-explained](https://catonmat.net/bash-one-liners-explained-part-three)
 

@@ -24,6 +24,7 @@ nav:
     - Dev tools: dev.md
     - bashrc template: bashrc_template.md
     - Bash script: bash.md
+    - Web: web.md
 
 
 markdown_extensions:
