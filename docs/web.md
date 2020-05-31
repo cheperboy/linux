@@ -32,12 +32,34 @@ sequenceDiagram
 * https://www.e-tinkers.com/2016/12/hosting-wordpress-on-raspberry-pi-part-6-implement-ssl/
 * Tuto to create CA/server key/client key and test it with curl/httpie https://tech-habit.info/posts/https-cert-based-auth-with-flask-and-gunicorn/
 
-### generate private key
+### generate self private key
 
 ```sh
 openssl req -x509 -newkey rsa:4096 -nodes -out certificate.pem -keyout private_key.pem -days 365
 ```
 
+### generate private key woth Certbot
+**Install certbot**
 
+```sh
+sudo apt-get install software-properties-common
+sudo apt-get update
+sudo apt-get install certbot
+```
 
+**Generate certificate**
 
+```sh
+sudo certbot certonly --webroot -w /home/pi/Prod/home_alarm_CERTBOT -d xyz.hd.free.fr
+```
+
+The key are stored here
+
+	/etc/letsencrypt/live/orsay.hd.free.fr/fullchain.pem;
+	/etc/letsencrypt/live/orsay.hd.free.fr/privkey.pem;
+
+**Renew certificate**
+
+```sh
+sudo certbot renew
+```

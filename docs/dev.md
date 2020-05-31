@@ -79,3 +79,11 @@ COLOR green
 	mkdocs serve --dev-addr 0.0.0.0:8001
 
 
+## Sublime
+**shortcuts** 
+* `ctrl + R` show function list
+* `ctrl + L` select line
+* `ctrl + maj + K` delete line
+* `ctrl + shift + up` move line up
+
+* `ctrl + P` show interactive menu
