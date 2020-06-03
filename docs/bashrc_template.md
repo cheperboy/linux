@@ -1,7 +1,7 @@
 ## Custom aliases
 
 ``` sh
-{!cheperboyrc!}
+{!.cheperboyrc!}
 ```
 
 ## old template
