@@ -1,11 +1,5 @@
-## Custom aliases
+## cheperboy_profile.sh
 
 ``` sh
-{!.cheperboyrc!}
-```
-
-## old template
-
-``` sh
-{!bashrc.sh!}
+{!cheperboy_profile.sh!}
 ```

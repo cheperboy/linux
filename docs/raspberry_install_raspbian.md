@@ -40,7 +40,7 @@ network={
 
 ## Configuration
 ### Hostname and password
-1.  Modify hostname, Edit `/etc/hostname`. Set to chaudiere (recognized on network as *chaudiere.local*)
+1.  Modify hostname, Edit `/etc/hostname` and `/etc/hosts`. Set to chaudiere (recognized on network as *chaudiere.local*)
 2.  Modify pi password `sudo passwd pi`
  
 ### Package install
@@ -66,34 +66,7 @@ network={
 
 `sudo apt-get install curl`
 
-NEXMO need cryptographie and cffi
-
-`sudo apt-get install build-essential libssl-dev libffi-dev python-dev`
-
 **clean**
 
 `sudo apt-get clean` supprime les paquets téléchargés et stockés sur carte SD
 
-
-### Configure firewall
-see [tuto](https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/)
-
-**Example: Chaudiere config**
-
-allow ssh, samba, 5007tcp
-
-**Usefull commands**
-
-* `sudo apt-get install ufw` - Install
-* `sudo ufw status numbered` - List rules 
-* `sudo ufw enable` - Enable Firewall (may break ssh connection, allow ssh rule first)
-* `sudo ufw disable` - Disable Firewall
-
-**Enable by application name**
-
-* `sudo ufw app list` - List applications
-* `sudo ufw allow ssh` - Enable app ssh (on default port 22)
-
-**Enable a specific port**
-
-* `sudo ufw allow 2222/tcp` - Enable tcp ssh port 2222 
