@@ -61,6 +61,7 @@ allow ssh, samba, 5007tcp
 * `sudo ufw allow 2222/tcp` - Enable tcp ssh port 2222 
 
 ## SSH Key for github
+### Create public key
 see [tuto](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 **Check if keys already exist**  
@@ -71,3 +72,26 @@ see [tuto](https://help.github.com/en/github/authenticating-to-github/connecting
 When asked, save key to `/home/pi/.ssh/id_rsa`  
 Add Public key (id_rsa.pub) to github account  
 Test shell connection to github with `ssh -T git@github.com`. This will add github.com to the list of known hosts in `~/.ssh/known_hosts`  
+
+**Add SSH key to the ssh-agent**  
+Start the ssh-agent in the background.  
+`eval "$(ssh-agent -s)"`
+
+Add SSH private key to the ssh-agent. If created key with a different name, replace `id_rsa` in the command with the name of your private key file.  
+`ssh-add ~/.ssh/id_rsa`
+
+Useful commands:  
+To delete all cached keys before `ssh-add -D`  
+To check your saved keys `ssh-add -l`  
+
+**Modify ssh config**  
+`nano cd ~/.ssh/config`  
+	# Github cheper account
+	Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+**Modify Git config**  
+
+
