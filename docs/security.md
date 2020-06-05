@@ -84,22 +84,23 @@ Useful commands:
 To delete all cached keys before `ssh-add -D`  
 To check your saved keys `ssh-add -l`  
 
-**Modify ssh config**  
+### Modify ssh config
 `nano cd ~/.ssh/config`  
+
 	# Github cheper account
-	Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa
-    IdentitiesOnly yes
+		Host github.com
+		HostName github.com
+		User git
+		IdentityFile ~/.ssh/id_rsa
+		IdentitiesOnly yes
 
-`IdentitiesOnly yes` required if multiple id_rsa files exists on the system. This option will prevent the SSH default behavior of sending the identity file matching the default filename for each protocol. If you have a file named ~/.ssh/id_rsa that will get tried BEFORE your ~/.ssh/id_rsa.github without this option.  
+`IdentitiesOnly yes` may be required if multiple id_rsa files exists on the system. This option will prevent the SSH default behavior of sending the identity file matching the default filename for each protocol. If you have a file named ~/.ssh/id_rsa that will get tried BEFORE your ~/.ssh/id_rsa.github without this option.  
 
-**Modify Git config**  
+### Modify Git config  
 `git config --global user.name "cheper"`  
 `git config --global user.email "my_email@gmail.com"`  
 
-Inside the local directory of the git repo  
+Inside the local directory of the git repo named 'linux'  
 `git remote set-url origin git@github.com:cheper/linux.git`  
 This will update the file .git/config to use ssh protocol instead of https.  
 
