@@ -1,7 +1,12 @@
 ## Shell config
 
-install zsh and ohmyzsh
-call personal profile from ~/.zshrc
+install zsh and ohmyzsh  
+call personal profile from `~/.zshrc` (see `.cheperboy_profile.sh`)  
+update `/etc/zsh/zshenv` (see exemple given) to set the PATH   
+
+**memo about bash vs zsh dotfiles loading**  
+bash loads `/etc/profile` `~/.profile` `~/.bashrc`  
+zsh loads `/etc/zsh/zshenv` `~/.zprofile` `~/.zshrc`  
 
 ### Prompt
 

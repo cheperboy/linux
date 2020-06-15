@@ -1,0 +1,31 @@
+# /etc/zsh/zshenv: system-wide .zshenv file for zsh(1).
+#
+# This file is sourced on all invocations of the shell.
+# If the -f flag is present or if the NO_RCS option is
+# set within this file, all other initialization files
+# are skipped.
+#
+# This file should contain commands to set the command
+# search path, plus other important environment variables.
+# This file should not contain commands that produce
+# output or assume the shell is attached to a tty.
+#
+# Global Order: zshenv, zprofile, zshrc, zlogin
+
+##############
+#  Cheperboy #
+##############
+# Default zsh config is commented out, replaced by 
+# the same path set in /etc/profile (used by bash shell)
+
+echo "Loading /etc/zsh/zshenv"
+if [[ -z "$PATH" || "$PATH" == "/bin:/usr/bin" ]]
+then
+	# The following is the default:
+	# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
+	# The following is not read so it is set outside if, see after fi below
+	# export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+fi
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+echo $PATH

@@ -1,0 +1,41 @@
+{
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"fade_fold_buttons": true,
+	"folder_exclude_patterns":
+	[
+		"__pycache__"
+	],
+	"font_size": 11,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"ApplySyntax",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"match_brackets": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_content": false,
+	"match_brackets_square": false,
+	"match_tags": false,
+	"scroll_past_end": false,
+	"scroll_speed": 8.0,
+	"show_encoding": true,
+	"tab_size": 2,
+	"theme": "Agila Monokai.sublime-theme",
+	"theme_agila_compact_sidebar": true,
+	"theme_agila_compact_tab": true,
+	"theme_agila_horizontal_scrollbar_gray": true,
+	"theme_agila_sidebar_light_icons": true,
+	"theme_agila_sidebar_mini": true,
+	"theme_agila_vertical_scrollbar_gray": true,
+	"ui_scale": 1.3,
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+	"word_wrap": true
+}
