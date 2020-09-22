@@ -26,6 +26,7 @@ nav:
     - Python : python.md
     - Python script template: python_script_template.md
     - Bash script: bash.md
+    - Network: network.md
 
 
 markdown_extensions:
