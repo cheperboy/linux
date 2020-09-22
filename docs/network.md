@@ -5,10 +5,14 @@
 Edit distant nas shared folder, add nfs share.
 
 Create local mount point 
+	
 	sudo mkdir /media/backup
 
 Edit fstab
+	
 	192.168.1.52:/volume1/backup/ /media/NAS_ORS/backup nfs defaults,user,auto,noatime,bg,nfsvers=3 0 0
 
+Mount and give permission
+ 
 	mount -a
 	sudo chmod 777 /media/backup
