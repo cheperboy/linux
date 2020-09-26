@@ -1,0 +1,351 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"info"
+			],
+			[
+				"exe",
+				"execute_check_output"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "## CIDR adress range notation\n192.168.1.0/24 adress range 192.168.1.0 - 192.168.1.255\n\n## Local DNS\nThe DNS of a linux machine is configure in `etc/hosts`.  \nAdding `192.168.1.50 nas-home` in this file, the machine will replace this name with the ip (anytime this name is used in a network service like ping, nfs share, etc).\n\n## Share NFS directory from Raspbian server\nInstall ressource\n\tsudo apt-get update\n\tsudo apt-get install nfs-kernel-server nfs-common\n\nConfigurer l'export:\n\n\tsudo nano /etc/exports\n\nAjouter la ligne  \n\t/home/pi/Dev asus.local(rw,all_squash,anonuid=1000,anongid=1000,sync)\n\nOn peut utiliser des ranges d'adresse ip ou wilcards pour partager sur plusieurs machine `192.168.1.*`\n\nRedémarrer le service\n\n\tsudo service nfs-kernel-server restart\n\n## Mount NFS share from Raspbian server to linux client\nInstall ressource\n\tsudo apt-get update\n\tsudo apt-get install nfs-common\n\nVérifier que les deux services nécessaires sont actifs (rpcbind et nfs-common).\n\n\tsudo service rpcbind status\n\tsudo service nfs-common status\n\nCréer le point de montage et le rendre accessible au user cheperboy (ou pi)\n\n\tsudo mkdir /media/alarm_dev\n\tsudo chown cheperboy /media/alarm_dev\n\nCommande pour monter le disque\n\n\tsudo mount -t nfs alarm.local:/home/pi/Dev /media/alarm_dev\n\nEdit fstab pour monter au démarrage `sudo nano /etc/fstab`\n\n\talarm.local:/home/pi/Dev /media/alarm_dev nfs defaults, netdev,rw 0 0\n\n\n## Mount distant NAS NFS directory on linux\nEdit distant nas shared folder, add nfs share.\n\nCreate local mount point \n\t\n\tsudo mkdir /media/backup\n\nEdit fstab\n\t\n\t192.168.1.52:/volume1/backup/ /media/NAS_ORS/backup nfs defaults,user,auto,noatime,bg,nfsvers=3 0 0\n\nMount and give permission\n \n\tmount -a\n\tsudo chmod 777 /media/backup\n\n## Nmap\n\n### LAN scanner\n\nsimple\n\n\tnmap -sP -O 192.168.1.0/24\n\nfull\n\n\tsudo nmap -sT -O 192.168.1.0/24\n\nhostname (not working)\n\t\n\tnmap -sL 192.168.1.0/24\n\n###Host scanner\n\n\tnmap -v -A 192.168.1.52\n",
+			"file": "docs/network.md",
+			"file_size": 1945,
+			"file_write_time": 132456297141327543,
+			"settings":
+			{
+				"buffer_size": 1940,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"ressource",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"PackageResourceViewer: Open Resource",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"ressou",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"markdo",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"markd",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"ma",
+				"MarkdownLivePreview: Open Settings"
+			],
+			[
+				"MarkdownLivePreview",
+				"MarkdownLivePreview: Open Settings"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 400.0,
+		"history":
+		[
+			"exit()",
+			"exti()",
+			"view.settings().get('html')",
+			"view.settings().get('font_face')",
+			"clear"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/cheperboy/repo/linux",
+		"/home/cheperboy/repo/linux/docs"
+	],
+	"file_history":
+	[
+		"//alarm/Partage/home_alarm/home_alarm.sublime-project",
+		"//alarm/Partage/linux/scripts/pref/sublime_user_settings.json",
+		"//alarm/Partage/home_alarm/src/config.py",
+		"//alarm/Partage/home_alarm/docs/server_config.md",
+		"//alarm/Partage/home_alarm/src/noxAlarmProcess.py",
+		"//alarm/Partage/home_alarm/src/utils/sms.py",
+		"//alarm/Partage/home_alarm/src/web/views/system_info.py",
+		"//alarm/Partage/home_alarm/src/utils/emails.py",
+		"//alarm/Partage/home_alarm/src/installer.py",
+		"//alarm/Partage/home_alarm/src/web/templates/_header.html.j2",
+		"//alarm/Partage/home_alarm/etc/nginx/sites-enabled/home_alarm.nginx",
+		"//alarm/Partage/home_alarm/etc/supervisor_alarm_prod.conf",
+		"//alarm/Partage/linux/docs/web.md",
+		"//alarm/Partage/home_alarm/etc/supervisor_alarm_dev.conf",
+		"//alarm/Partage/home_alarm/TODO.md",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/ApplySyntax.sublime-settings",
+		"//alarm/Partage/home_alarm/etc/cron_chaudiere_cron_prod",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"//alarm/Partage/home_alarm/etc/nginx/sites-enabled/home_alarm_http.nginx",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Bash.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Shell-Unix-Generic.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/nginx.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/Theme - Monokai Pro/Theme - Monokai Pro.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Theme - Monokai Pro.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"//alarm/Partage/home_alarm/src/web/static/js/alarm.js",
+		"//alarm/Partage/home_alarm/src/web/templates/index.html.j2",
+		"//alarm/Partage/home_alarm/src/web/templates/_nox-panel.html.j2",
+		"//alarm/Partage/home_alarm/src/web/static/css/common.css",
+		"//alarm/Partage/home_alarm/src/web/templates/_navbar.html.j2",
+		"//alarm/Partage/home_alarm/etc/nginx/sites-enabled/home_alarm",
+		"//alarm/Partage/home_alarm/README.md",
+		"//alarm/Partage/home_alarm/etc/nginx/sites-enabled/evok",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/PackageResourceViewer/PackageResourceViewer.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/PackageResourceViewer/README.md",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/HTML (Rails).sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/PackageResourceViewer.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/sublime-markdown-extended/Syntaxes/Markdown Extended.JSON-tmLanguage",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/User/Ruby Haml.sublime-settings",
+		"//alarm/Partage/home_alarm/src/web/templates/ext-panel.html.j2",
+		"//alarm/Partage/home_alarm/src/web/templates/alarms-panel.html.j2",
+		"//alarm/Partage/home_alarm/src/web/templates/index.html",
+		"//alarm/Partage/home_alarm/src/web/templates/login.html",
+		"//alarm/Partage/home_alarm/src/web/templates/admin/partials_alarm/_logins.html.j2",
+		"//alarm/Partage/home_alarm/src/web/__init__.py",
+		"//alarm/Partage/home_alarm/etc/nginx/sites-enabled/home_alarm_http",
+		"//alarm/Partage/linux/docs/security.md",
+		"//alarm/Partage/home_alarm/src/main.py",
+		"//alarm/Partage/minimal/app.py",
+		"//alarm/Partage/home_alarm/src/etc/email_config_secret.json",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/adaptive/Adaptive.sublime-theme",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Widget - Default.sublime-settings",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Default.sublime-theme",
+		"//alarm/Partage/home_alarm/docs/dev_workflow.md",
+		"//alarm/Partage/home_alarm/.gitignore",
+		"/C/Users/matthieu/AppData/Roaming/Sublime Text 3/Packages/Babel/Babel.sublime-settings",
+		"/C/Users/matthieu/AwesomeProject/babel.config.js",
+		"/C/Users/matthieu/AwesomeProject/app.json",
+		"/C/Users/matthieu/AwesomeProject/App.js",
+		"//alarm/Partage/home_alarm/docs/index.md",
+		"//alarm/Partage/home_alarm/src/nox_alarm/noxGateway.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 151.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "docs/network.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1038,
+								1038
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 563.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 39.0
+	},
+	"input":
+	{
+		"height": 92.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "linux.sublime-project",
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"README.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 650.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 494.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 429.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
