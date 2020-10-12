@@ -18,6 +18,6 @@
 `command >file` Redirect stdout to file. stderr to console  
 
 `command >file 2>&1` Redirect stdout & stderr to file  
+`command 2>&1 | tee -a file` Redirect stdout & stderr console and append to file 
 
 `command >/dev/null 2>&1` Discard both stdout & stderr  
-	

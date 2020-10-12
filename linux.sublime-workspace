@@ -16,13 +16,10 @@
 	"buffers":
 	[
 		{
-			"contents": "## CIDR adress range notation\n192.168.1.0/24 adress range 192.168.1.0 - 192.168.1.255\n\n## Local DNS\nThe DNS of a linux machine is configure in `etc/hosts`.  \nAdding `192.168.1.50 nas-home` in this file, the machine will replace this name with the ip (anytime this name is used in a network service like ping, nfs share, etc).\n\n## Share NFS directory from Raspbian server\nInstall ressource\n\tsudo apt-get update\n\tsudo apt-get install nfs-kernel-server nfs-common\n\nConfigurer l'export:\n\n\tsudo nano /etc/exports\n\nAjouter la ligne  \n\t/home/pi/Dev asus.local(rw,all_squash,anonuid=1000,anongid=1000,sync)\n\nOn peut utiliser des ranges d'adresse ip ou wilcards pour partager sur plusieurs machine `192.168.1.*`\n\nRedémarrer le service\n\n\tsudo service nfs-kernel-server restart\n\n## Mount NFS share from Raspbian server to linux client\nInstall ressource\n\tsudo apt-get update\n\tsudo apt-get install nfs-common\n\nVérifier que les deux services nécessaires sont actifs (rpcbind et nfs-common).\n\n\tsudo service rpcbind status\n\tsudo service nfs-common status\n\nCréer le point de montage et le rendre accessible au user cheperboy (ou pi)\n\n\tsudo mkdir /media/alarm_dev\n\tsudo chown cheperboy /media/alarm_dev\n\nCommande pour monter le disque\n\n\tsudo mount -t nfs alarm.local:/home/pi/Dev /media/alarm_dev\n\nEdit fstab pour monter au démarrage `sudo nano /etc/fstab`\n\n\talarm.local:/home/pi/Dev /media/alarm_dev nfs defaults, netdev,rw 0 0\n\n\n## Mount distant NAS NFS directory on linux\nEdit distant nas shared folder, add nfs share.\n\nCreate local mount point \n\t\n\tsudo mkdir /media/backup\n\nEdit fstab\n\t\n\t192.168.1.52:/volume1/backup/ /media/NAS_ORS/backup nfs defaults,user,auto,noatime,bg,nfsvers=3 0 0\n\nMount and give permission\n \n\tmount -a\n\tsudo chmod 777 /media/backup\n\n## Nmap\n\n### LAN scanner\n\nsimple\n\n\tnmap -sP -O 192.168.1.0/24\n\nfull\n\n\tsudo nmap -sT -O 192.168.1.0/24\n\nhostname (not working)\n\t\n\tnmap -sL 192.168.1.0/24\n\n###Host scanner\n\n\tnmap -v -A 192.168.1.52\n",
 			"file": "docs/network.md",
-			"file_size": 1945,
-			"file_write_time": 132456297141327543,
 			"settings":
 			{
-				"buffer_size": 1940,
+				"buffer_size": 1923,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -232,15 +229,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1940,
+						"buffer_size": 1923,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1038,
-								1038
+								461,
+								461
 							]
 						],
 						"settings":
@@ -249,7 +246,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 563.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -339,11 +336,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 429.0,
+	"side_bar_width": 50.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
