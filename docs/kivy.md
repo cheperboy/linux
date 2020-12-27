@@ -20,3 +20,29 @@ rotation = 0
 mouse = mouse
 ```
 
+## Reference ids
+
+`main.kv`:
+``` kv
+<ContentNavigationDrawer>:
+    my_menu_mdlist: my_menu_mdlist
+
+    ScrollView:
+        MymenuMDList:
+            id: my_menu_mdlist
+            text: "toto"
+
+Screen:
+    ContentNavigationDrawer:
+        id: content_nav_drawer
+```
+`main.py` :
+``` py
+self.root.ids.content_nav_drawer.my_menu_mdlist.text
+>>> "toto"
+```
+## Remove widget
+    self.parent.remove_widget(self)
+
+
+    
