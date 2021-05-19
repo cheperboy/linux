@@ -14,6 +14,9 @@ type in console to see and add in perso profile to make permanent
 
 basic
 
+### Prompt
+
+
 	SIMPLE_PROMPT="%~ %# "
 	PROMPT="%F{green}$USER%f@%F{blue}%m %f%~ %# "
 
@@ -63,3 +66,10 @@ Shell config
 
 	alias cat="highlight -O ansi --force"
 	alias bcat="highlight -O ansi --syntax=bash"
+
+
+## Logiciels de base
+`sound-juicer` mp3 ripper
+`handbrake` dvd ripper
+`mkusb` usb bootable persistent https://doc.ubuntu-fr.org/mkusb
+

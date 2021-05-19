@@ -22,13 +22,23 @@
 `sudo netstat -tulpn` Show servers and port listenning  
 
 **disk usage**  
+Trier par taille, plus grand en premier:  
+`sudo du -shc /var/* | sort -rh` dossiers  
+`ls -lh --sort=size` fichiers  
+`du -kx | egrep -v "\./.+/" | sort -nr` fichiers et dossiers  
+
 `du -xksh ./* | sort -n` Espace utilisé  
 `du -hs`  
 `df -h`  
 `cat /proc/meminfo` : affiche l’état d’utilisation de la mémoire  
 
+**Partitions**  
+`lsblk` liste les partitions (attention: ne montre pas l'ordre réelle sur le disque)
+`sudo fdisk -` liste les partitions (avec secteurs de début/fin) 
+
 **copy / moove**  
 `cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
+`cp -p fstab fstab.old` copie de sauvegarde conservant les permissions/mode/propriétaire    
 `mv foo/ bar/` Déplace le répertoir `foo` et son contenu dans le répertoire `bar`. résultat: il existe un chemin `bar/foo/file.txt`
 `mv foo bar` Renomme le répertoir ou le fichier `foo` en `bar`  
 `rm -r dir/` supprime le répertoire `dir` et son contenu  
@@ -36,6 +46,11 @@
 **console**  
 `tree` Tree representation
 `tree -d` Tree representation, directories only
+
+**commandes d'administration**
+supprimer les snaps inutiles
+`snap list --all | awk '/désactivé|disabled/{print $1, $3}' | while read snapname revision; do sudo snap remove "$snapname" --revision="$revision"; done`
+
 
 
 ## Files permissions
