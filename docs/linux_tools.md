@@ -8,14 +8,11 @@ update `/etc/zsh/zshenv` (see exemple given) to set the PATH
 bash loads `/etc/profile` `~/.profile` `~/.bashrc`  
 zsh loads `/etc/zsh/zshenv` `~/.zprofile` `~/.zshrc`  
 
-### Prompt
+## Prompt
 
 type in console to see and add in perso profile to make permanent 
 
-basic
-
-### Prompt
-
+### basic Prompt
 
 	SIMPLE_PROMPT="%~ %# "
 	PROMPT="%F{green}$USER%f@%F{blue}%m %f%~ %# "
@@ -33,7 +30,7 @@ basic
 | %# | print a prompt () |
 
 
-git support
+### git support
  
 	PROMPT='%(!.%{%F{yellow}%}.)$USER @ %{$fg[white]%}%M %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
@@ -69,7 +66,7 @@ Shell config
 
 
 ## Logiciels de base
-`sound-juicer` mp3 ripper
-`handbrake` dvd ripper
-`mkusb` usb bootable persistent https://doc.ubuntu-fr.org/mkusb
+`sound-juicer` mp3 ripper  
+`handbrake` dvd ripper  
+`mkusb` usb bootable persistent https://doc.ubuntu-fr.org/mkusb  
 
