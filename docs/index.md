@@ -3,8 +3,8 @@
 **Interfaces**  
 `lsusb`  Liste les périphériques USB  
 `dmesg | grep tty` Trouver le nom du périphérique série qui vient d’être branché  
-`lsblk` List devices with mount points
-`sudo iw wlan0 scan` Scan available wifi networks
+`lsblk` List devices with mount points  
+`sudo iw wlan0 scan` Scan available wifi networks  
 
 **Files**  
 `sudo chown pi mydb.db` Le propriétaire du fichier mydb.db devient l’utilisateur “pi”  
@@ -15,8 +15,8 @@
 `ps auxf` List all processes  
 `kill -9 $(lsof -ti tcp:5007)` socket.error: [Errno 98] Address already in use. tue le processus serveur qui écoute le port 5007  
 `killall -9 chromium-browse` Kill a process by name  
-`sudo netstat -ltnp` port listening
-`sudo netstat -ltnp | grep :port kill -9` port listening and killing zombie thread server
+`sudo netstat -ltnp` port listening  
+`sudo netstat -ltnp | grep :port kill -9` port listening and killing zombie thread server  
 
 **server / ports**  
 `sudo netstat -tulpn` Show servers and port listenning  
@@ -33,23 +33,24 @@ Trier par taille, plus grand en premier:
 `cat /proc/meminfo` : affiche l’état d’utilisation de la mémoire  
 
 **Partitions**  
-`lsblk` liste les partitions (attention: ne montre pas l'ordre réelle sur le disque)
-`sudo fdisk -` liste les partitions (avec secteurs de début/fin) 
+`lsblk` liste les partitions (attention: ne montre pas l'ordre réelle sur le disque)  
+`blkid` UUID des partitions  
+`sudo fdisk -l` liste les partitions (avec secteurs de début/fin)  
 
 **copy / moove**  
 `cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
-`cp -p fstab fstab.old` copie de sauvegarde conservant les permissions/mode/propriétaire    
-`mv foo/ bar/` Déplace le répertoir `foo` et son contenu dans le répertoire `bar`. résultat: il existe un chemin `bar/foo/file.txt`
+`cp -p fstab fstab.old` copie de sauvegarde conservant les permissions/mode/propriétaire  
+`mv foo/ bar/` Déplace le répertoir `foo` et son contenu dans le répertoire `bar`. résultat: il existe un chemin `bar/foo/file.txt`  
 `mv foo bar` Renomme le répertoir ou le fichier `foo` en `bar`  
 `rm -r dir/` supprime le répertoire `dir` et son contenu  
 
 **console**  
-`tree` Tree representation
-`tree -d` Tree representation, directories only
+`tree` Tree representation  
+`tree -d` Tree representation, directories only  
 
-**commandes d'administration**
+**commandes d'administration**  
 supprimer les snaps inutiles
-`snap list --all | awk '/désactivé|disabled/{print $1, $3}' | while read snapname revision; do sudo snap remove "$snapname" --revision="$revision"; done`
+`snap list --all | awk '/désactivé|disabled/{print $1, $3}' | while read snapname revision; do sudo snap remove "$snapname" --revision="$revision"; done`  
 
 
 
