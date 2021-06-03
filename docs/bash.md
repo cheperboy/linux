@@ -26,6 +26,29 @@ bash One-Liners Explained article:
 
 ### grep
 
+## Sed example
+Substitute (find and replace) "foo" with "bar" on each line
+
+    sed 's/foo/bar/'             # replaces only 1st instance in a line
+    sed 's/foo/bar/4'            # replaces only 4th instance in a line
+    sed 's/foo/bar/g'            # replaces ALL instances in a line
+    sed 's/\(.*\)foo\(.*foo\)/\1bar\2/' # replace the next-to-last case
+    sed 's/\(.*\)foo/\1bar/'            # replace only the last case
+
+Substitute "foo" with "bar" ONLY for lines which contain "baz"
+
+    sed '/baz/s/foo/bar/g'
+
+Substitute "foo" with "bar" EXCEPT for lines which contain "baz"
+
+    sed '/baz/!s/foo/bar/g'
+
+Change "scarlet" or "ruby" or "puce" to "red"
+
+    sed 's/scarlet/red/g;s/ruby/red/g;s/puce/red/g'   # most seds
+    gsed 's/scarlet\|ruby\|puce/red/g'                # GNU sed only
+
+
 
 ## bash Redirection
 
@@ -40,3 +63,20 @@ bash One-Liners Explained article:
 `command 2>&1 | tee -a file` Redirect stdout & stderr console and append to file 
 
 `command >/dev/null 2>&1` Discard both stdout & stderr  
+
+
+## bash onliner
+
+### history sorted by occurence
+
+    history | awk '{print $2;}' | sort | uniq -c | sort -rn | head -10
+
+choisir **awk** ou **sed** pour avoir toute la ligne ou juste la commande
+
+`awk '{print $2;}'` récupère la commande qui est en deuxième colonne (exemple *ls*)  
+`sed -e 's/ *[0-9][0-9]* *//'` récupère toute la ligne de commande (exemple *ls -la*)  
+`sort` tri alphabetique  
+`uniq -c` supprime les doublons et ajoute une colonne avec le nombre d'occurence  
+`sort -rn` tri numérique (-n) inverse (-r)  
+`head -10` affiche uniquement les 10 premiers résultats
+
