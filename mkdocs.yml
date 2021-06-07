@@ -13,7 +13,8 @@ theme:
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
-  
+#  features:
+#     - toc.integrate    
 nav:
     - Home: index.md
     - Raspberry install OS: raspberry_install_raspbian.md
@@ -42,10 +43,12 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - footnotes
+  - meta
   - markdown_include.include:
       base_path: scripts
 
 extra_css:
+  - stylesheets/extra.css
   - https://unpkg.com/mermaid@7.1.2/dist/mermaid.css
 extra_javascript:
   - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
