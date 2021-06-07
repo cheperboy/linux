@@ -17,6 +17,7 @@ theme:
 #     - toc.integrate    
 nav:
     - Home: index.md
+    - Bash: bash.md
     - Raspberry install OS: raspberry_install_raspbian.md
     - Dot Files: dotfiles.md
     - Linux tools: linux_tools.md
@@ -27,9 +28,9 @@ nav:
     - Python : python.md
     - Kivy : kivy.md
     - Python script template: python_script_template.md
-    - Bash script: bash.md
     - Network: network.md
     - Divers: gmvault.md
+    - links.md
 
 
 markdown_extensions:
