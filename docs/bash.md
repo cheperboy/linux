@@ -93,17 +93,25 @@ The following are equivalent
                  -r       : --recursive
                   -l      : keep sym link as they are 
                    -ptgoD : preserve owner group perms device time
-    -s, --protect-args: don't interpret wildcards in filename 
-    --dry-run
+    -s, --protect-args      : don't interpret wildcards in filename 
+    -z, --compress
+    -u, --update            : skip files that are newer on the receiver
+    -n, --dry-run           : trial run with no changes made
+    -i, --itemize-changes   : output a change-summary for all updates
+    -H, --hard-links        : preserve hard links
+    --remove-source-files   : sender removes synchronized files (non-dir)
+    --delete                : delete extraneous files from dest dirs
     -v, --verbose
     -h, --human-readable
-    -H, --hard-links : preserve hard links
-    --remove-source-files : sender removes synchronized files (non-dir)
-    --delete : delete extraneous files from dest dirs
     --exclude=tmp/ 
     -backup --backup-dir=rsync_trash/ (use also --exclude=rsync_trash/ )
     --files-from=FILE : To specify the exact list of files to transfer 
 
+
+    use rsync to make a diff (diff also permission, attributes, atime, ...)
+    ------------------------
+    rsync -aHAX -ni --delete
+    
 
 ### web
 

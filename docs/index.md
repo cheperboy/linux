@@ -142,10 +142,16 @@ From Windows PC
 
 ## Backup
 ### Rsnapshot
+
 	rsnapshot configtest
 	rsnapshot du
 	rsnapshot hourly
 
+sauvegarde distante du dernier snapshot
+	
+	rsync -avh --delete --progress dest/hourly.0/ distant_backup/
+	ajouter -x pour compresser le transfert. supprimer --progress si pas en console.
+	
 
 ### rsync (synchronize / mirror)
 Synchronize datas from media 1 to media 2
