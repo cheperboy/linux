@@ -44,6 +44,8 @@ Change "scarlet" or "ruby" or "puce" to "red"
     -type f : file  
     -empty : fichier/dossier vide
 
+    [find with xarg and exec](https://www.grymoire.com/Unix/Find.html)
+
 ### grep
 
     options
@@ -64,6 +66,14 @@ Change "scarlet" or "ruby" or "puce" to "red"
     grep '^fred' /etc/passwd             # find 'fred', but only at the start of a line
     grep '[FG]oo' *                      # find Foo or Goo in all files in the current dir
     grep '[0-9][0-9][0-9]' *             # find all lines in all files in the current dir with three numbers in a row
+
+### xargs
+Xargs executes its arguments as commands, and reads standard input to specify arguments to that command.  
+Xargs knows the maximum number or arguments each command line can handle, and does not exceed that limit.
+The following are equivalent
+
+    find /tmp -print | xargs ls -ld
+    ls -ld `find /tmp -print`
 
 
 ### mkdir

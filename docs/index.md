@@ -141,6 +141,12 @@ From Windows PC
 
 
 ## Backup
+### Rsnapshot
+	rsnapshot configtest
+	rsnapshot du
+	rsnapshot hourly
+
+
 ### rsync (synchronize / mirror)
 Synchronize datas from media 1 to media 2
 ``` bash
@@ -155,8 +161,9 @@ crontab -e
 ```
 
 tuto :  
-- [raspberry](https://www.vdsar.net/rsync-backup-synology-remote-raspberry-pi/)  
-- [synology](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Backup_Restore/How_to_back_up_Linux_computer_to_Synology_NAS)
+- [raspberry to synology](https://www.vdsar.net/rsync-backup-synology-remote-raspberry-pi/)  
+- [synology.com](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Backup_Restore/How_to_back_up_Linux_computer_to_Synology_NAS)
+
 
 
 ## Administration
