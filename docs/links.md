@@ -39,6 +39,12 @@ online regex [regexper](https://regexper.com/) [regex101](https://regex101.com/)
 [Grub2 ful tutorial (dedoimedo)](https://www.dedoimedo.com/computers/grub-2.html)  
 [repair grub from live USB (techmint)](https://www.tecmint.com/rescue-repair-and-reinstall-grub-boot-loader-in-ubuntu/)  
 [using efibootmgr command (linuxbabe)](https://www.linuxbabe.com/command-line/how-to-use-linux-efibootmgr-examples)  
+[reparer grub](https://www.malekal.com/reparer-restaurer-grub-et-le-demarrage-de-linux/)  
+
+### Disk & partitions
+[tuto partitons (malekal)](https://www.malekal.com/partitions-disque-linux-structure-creation-formatage/)  
+[créer partition (maleka)](https://www.malekal.com/fdisk-gfdisk-creer-supprimer-redimensionner-des-partitions-de-disque-en-ligne-de-commandes-linux/)  
+
 
 ## Server
 
