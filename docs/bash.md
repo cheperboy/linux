@@ -125,7 +125,7 @@ chroot https://www.linuxtricks.fr/wiki/chrooter-un-systeme-linux
 
 ### renommer plusieurs fichiers
 
-    ls -c1|xargs -I {} mv {} "prefixe{}suffixe"
+    ls -c1 | xargs -I {} mv {} "prefixe{}suffixe"
 
 
 ### history sorted by occurence
@@ -153,3 +153,32 @@ choisir **awk** ou **sed** pour avoir toute la ligne ou juste la commande
     command 2>&1 | tee -a file      # Redirect stdout & stderr console and append to file 
     command >/dev/null 2>&1         # Discard both stdout & stderr  
 
+### Lister les répertoires vides
+
+    find . -empty -type d
+
+### Supprimer les répertoires vides
+
+    find . -empty -type d -delete
+
+### Supprimer les fichiers selon un motif
+
+    find . -type f -name "motif" -print | xargs rm -f
+
+### Chercher un motif dans des fichiers
+
+    find . -type f -name '*.sql' | xargs grep 'foo.bar'
+
+### Changer les droits des répertoires
+
+    find /path/to/base/dir -type d -print0 | xargs -0 chmod 755
+ ou
+ 
+    find /path/to/base/dir -type d -exec chmod 755 {} +
+
+### Changer les droits des fichiers
+
+    find /path/to/base/dir -type f -print0 | xargs -0 chmod 644
+ ou
+
+    find /path/to/base/dir -type f -exec chmod 644 {} +
