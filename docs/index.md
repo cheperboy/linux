@@ -79,6 +79,34 @@ To change all the files to 644 (-rw-r--r--):
 ## File Sharing
 ### NFS
 
+#### NFS debug
+
+After updating /etc/exports on server, run 
+
+	exportfs -r
+
+check if export is actually exported from server
+
+	exportfs -av
+	exportfs -sv
+	showmount -e
+
+from client
+
+	showmount -e server_name # Check if server is providing some exports
+	df 						 # Check if nfs export is actually mounted
+	cat /etc/mtab | grep nfs # Show nfs currently mounted and nfs version used
+
+#### NFS options
+
+	no_root_squash
+
+Problem: normal user can write but root cannot.
+Explanation: NFS was designed with the idea that user and group ids would be the same on all machines across the network. For ordinary users, that works ok. But root's UID is always 0, and just because you have root on one box, it doesn't mean that you should have root access to every machine on the network.
+Therefore, NFS treats root specially. By default, root is mapped to the nobody user, which normally has no write access. The no_root_squash option allows you to change how root is handled.
+This option must be used for rsnapshot/rsync (to preserve ownership)
+
+
 https://help.ubuntu.com/community/SettingUpNFSHowTo
 
 #### Mount NFS drive (synology) from linux (NFSV4 client)
@@ -151,7 +179,51 @@ sauvegarde distante du dernier snapshot
 	
 	rsync -avh --delete --progress dest/hourly.0/ distant_backup/
 	ajouter -x pour compresser le transfert. supprimer --progress si pas en console.
+
+# Exemple config rsnapshot overs NFS
+from client *asus.local* /home/cheperboy/poubelle/source/ 
+to server *debhp* /media/dd1t/backup_asus/test
+
+server side, setup nfs share: edit `/etc/exports`
 	
+	/media/dd1t/backup_asus asus.local(rw,sync,no_root_squash)
+
+client side, mount nfs share: edit `/etc/fstab` then `sudo mount -a`
+
+	debhp:/media/dd1t/backup_asus /media/debhp/backup_asus nfs defaults 0 0
+
+Client side, edit /etc/rsnapshot_debhp.conf.conf
+
+	config_version	1.2
+	snapshot_root	/media/debhp/backup_asus/root
+	no_create_root	1
+	cmd_cp		/bin/cp
+	cmd_rm		/bin/rm
+	cmd_rsync	/usr/bin/rsync
+	cmd_logger	/usr/bin/logger
+	retain	hourly	6
+	retain	daily	7
+	retain	weekly	4
+	retain	monthly	2
+	verbose		4
+	loglevel	3
+	logfile	/var/log/rsnapshot.log
+	lockfile	/var/run/rsnapshot.pid
+	link_dest	1
+	backup	/home/cheperboy/poubelle/source/	test/
+
+Create the snapshot_root directory.note that when the nfs share is not mounted, this directory won't be created thanks to no_create_root 1. This avoid filling the cliet disk.
+
+	mkdir -r /media/debhp/backup_asus/root
+
+run 
+
+	sudo rsnapshot -c rsnapshot_debhp.conf.conf hourly
+
+Check
+
+	sudo rsnapshot -c rsnapshot_debhp.conf.conf du
+
 
 ### rsync (synchronize / mirror)
 Synchronize datas from media 1 to media 2
