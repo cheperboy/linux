@@ -226,6 +226,22 @@ Check
 
 
 ### rsync (synchronize / mirror)
+
+#### rsync basics
+
+*Files permissions and ownership*  
+In order to preserve permissions, rsync must bu run as root. Indeed, as a normal user you can't create files that don't belong to you, so you need to either log in as root on the destination, or you have to be root locally and run rsync in the opposite direction and pull the files in.  
+
+By default rsync will try to match the ownership by username / groupname. In other words when the user *toto* is the owner of a file at the source, rsync will make the user *toto* also the owner at the destination (even when they have different UID/GID numbers).  
+That is usually quite resilient and the most predictable for humans as we normally don't look at ownership in the form of UID/GID numbers.  
+
+When no matching user *toto* is present on the remote destination, then a fall-back scenario will happen. Rsync will then preserve the actual underlying UID/GID numbers of the *toto* user on the source will used to set the owner.  
+
+That should preserver the correct ownership when you reverse the rsync direction and restore the backup.  
+
+If the option *--numeric-ids* is used, rsync don't try to match username / groupname of the source / destination and the numeric ID from the source system is used.  
+
+#### sync
 Synchronize datas from media 1 to media 2
 ``` bash
 sudo apt-get install rsync
