@@ -64,11 +64,6 @@ Shell config
 	alias cat="highlight -O ansi --force"
 	alias bcat="highlight -O ansi --syntax=bash"
 
-## Backup
-- rdiff-backup: incremental, the last backup contains the diff compared to the previous one and so on. if a run failed (network issue) then all following backups are irrelevant. 
-- rsnapshot: Based on rsync. Designed to pull backup from a server. So it is good from server to server. pushing to nfs works but is not the intended use of this program. what is the behaviour in case of interrupted backup? use hard links to store only diff. the most recent backup is a mirror of the source dir. older backup dirs are hard links to this miror or files modified. 
-- rsync: not impacted in case of network failure, the next run will update the missing files. --backup option can save the diffs compared to previous run, althouth it does not tell is the file is modified or deleted. with a dedicated script, rsync can provide a mirror + some info about what file was modified when. 
-
 
 ## Logiciels de base
 `sound-juicer` mp3 ripper  
