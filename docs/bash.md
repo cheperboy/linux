@@ -80,39 +80,6 @@ The following are equivalent
 
     mkdir -pv # create parent directory (verbose)
 
-### rsync
-
-    rsync -avzh  --progress                        #rsync-copy
-    rsync -avzh  --progress --remove-source-files  #rsync-move
-    rsync -avzhu --progress                        #rsync-update
-    rsync -avzhu --progress --delete               #rsync-synchronize
-
-    option utiles
-    -------------
-    -a : same as -rlptgoD
-                 -r       : --recursive
-                  -l      : keep sym link as they are 
-                   -ptgoD : preserve owner group perms device time
-    -s, --protect-args      : don't interpret wildcards in filename 
-    -z, --compress
-    -u, --update            : skip files that are newer on the receiver
-    -n, --dry-run           : trial run with no changes made
-    -i, --itemize-changes   : output a change-summary for all updates
-    -H, --hard-links        : preserve hard links
-    --remove-source-files   : sender removes synchronized files (non-dir)
-    --delete                : delete extraneous files from dest dirs
-    -v, --verbose
-    -h, --human-readable
-    --exclude=tmp/ 
-    -backup --backup-dir=rsync_trash/ (use also --exclude=rsync_trash/ )
-    --files-from=FILE : To specify the exact list of files to transfer 
-
-
-    use rsync to make a diff (diff also permission, attributes, atime, ...)
-    ------------------------
-    rsync -aHAX -ni --delete
-    
-
 ### web
 
     netstat -nat|grep -i ":80"|wc -l    # connections sur le port 80
