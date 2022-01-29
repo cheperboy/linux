@@ -88,7 +88,7 @@ print a diff considering also file permission and ownership
 
 ## Rsnapshot
 
-	sudo rsnapshot configtest
+	sudo rsnapshot -c /etc/rsnapshot_config_file.conf configtest
 	sudo rsnapshot du
 	sudo rsnapshot hourly
 

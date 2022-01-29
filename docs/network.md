@@ -61,6 +61,10 @@ Mount and give permission
 	mount -a
 	sudo chmod 777 /media/backup
 
+## Mount Synology SMB share (no fstab)
+sudo mkdir /mnt/nas
+sudo mount -t cifs -o username=myname,uid=myname,gid=myname //nasmlv.local/homes/myname /mnt/nas
+
 ## Nmap
 
 ### LAN scanner

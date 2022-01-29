@@ -37,6 +37,11 @@ Trier par taille, plus grand en premier:
 `blkid` UUID des partitions  
 `sudo fdisk -l` liste les partitions (avec secteurs de début/fin)  
 
+**Mounts**  
+`findmnt --fstab --evaluate` show fstab content with options
+`mount` show devices currently mounted
+
+
 **copy / moove**  
 `cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
 `cp -p fstab fstab.old` copie de sauvegarde conservant les permissions/mode/propriétaire  

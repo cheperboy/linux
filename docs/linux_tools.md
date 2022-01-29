@@ -71,5 +71,6 @@ Shell config
 `mkusb` usb bootable persistent https://doc.ubuntu-fr.org/mkusb  
 `BackInTime` Sauvegarde de donénes    
 `timeshift` Sauvegarde du système et fichiersde conf système
+`conky`  
 
 
