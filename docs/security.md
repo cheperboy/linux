@@ -6,7 +6,7 @@
 - [Sécurité des appli web](https://blog.behrouze.com/securite/)
 
 
-## Automatic security updates
+## Debian Automatic security updates
 
 To keep the computer with the latest security updates automatically
 use package [UnattendedUpgrades](https://wiki.debian.org/UnattendedUpgrades)
@@ -103,4 +103,29 @@ To check your saved keys `ssh-add -l`
 Inside the local directory of the git repo named 'linux'  
 `git remote set-url origin git@github.com:cheper/linux.git`  
 This will update the file .git/config to use ssh protocol instead of https.  
+
+# GnuPG
+
+Install `sudo apt install gnupg`
+`-a --armor`		ASCI output (can be sent via email)  
+`-c --symmetric`	Encrypt with simple password (symmetric, no public/private key)  
+`-d --decrypt`		Decrypt  
+`-o --output`		file output instead of stdout/console  
+`--no-symkey-cache` Ne pas conserver le mot de passe pendant la session
+
+# Encrypt (symmetric)
+
+`gpg -c -a file.txt`
+`gpg --symmetric --armor file.txt`
+
+# Decrypt
+
+`gpg -d file.txt.gpg` output to console
+`gpg -o file.txt -d file.txt.gpg` output to a file
+`cat file.txt.gpg | gpg -d`
+
+# Gedit shortcut
+
+`Ctrl + Maj + E` Encrypt (symmetric)
+`Ctrl + Maj + D` Decrypt
 
