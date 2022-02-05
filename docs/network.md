@@ -81,9 +81,11 @@ hostname (not working)
 	
 	nmap -sL 192.168.1.0/24
 
-Host scanner
+### Host scanner
 
 	nmap -v -A 192.168.1.52
+
+### Host vulnerability
 
 Update scripts before vuln scan
 
