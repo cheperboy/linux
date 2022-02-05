@@ -81,6 +81,15 @@ hostname (not working)
 	
 	nmap -sL 192.168.1.0/24
 
-###Host scanner
+Host scanner
 
 	nmap -v -A 192.168.1.52
+
+Update scripts before vuln scan
+
+    sudo nmap --script-updatedb
+
+scan host for vulnerability
+
+    sudo nmap -Pn --script vuln <HOST>
+

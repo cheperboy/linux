@@ -113,18 +113,18 @@ Install `sudo apt install gnupg`
 `-o --output`		file output instead of stdout/console  
 `--no-symkey-cache` Ne pas conserver le mot de passe pendant la session
 
-# Encrypt (symmetric)
+## Encrypt (symmetric)
 
 `gpg -c -a file.txt`
 `gpg --symmetric --armor file.txt`
 
-# Decrypt
+## Decrypt
 
-`gpg -d file.txt.gpg` output to console
-`gpg -o file.txt -d file.txt.gpg` output to a file
-`cat file.txt.gpg | gpg -d`
+`gpg -d file.txt.gpg` output to console  
+`gpg -o file.txt -d file.txt.gpg` output to a file  
+`cat file.txt.gpg | gpg -d`  
 
-# Gedit shortcut
+## Gedit shortcut
 
 `Ctrl + Maj + E` Encrypt (symmetric)
 `Ctrl + Maj + D` Decrypt
