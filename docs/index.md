@@ -10,16 +10,17 @@
 `sudo chown pi mydb.db` Le propriétaire du fichier mydb.db devient l’utilisateur “pi”  
 `chmod a+x run.py` rend le fichier exécutable (change les permissions)  
 `stat -c "%a %n" file.txt` to see file permission in octal (777..)  
+`lsof file.txt` to see what processes are currently reading/writing the file  
 
 **processus**  
 `ps auxf` List all processes  
 `kill -9 $(lsof -ti tcp:5007)` socket.error: [Errno 98] Address already in use. tue le processus serveur qui écoute le port 5007  
 `killall -9 chromium-browse` Kill a process by name  
-`sudo netstat -ltnp` port listening  
-`sudo netstat -ltnp | grep :port kill -9` port listening and killing zombie thread server  
+`sudo ss -ltnp` port listening (socket statistics)  
+`sudo ss -ltnp | grep :port kill -9` port listening and killing zombie thread server  
 
 **server / ports**  
-`sudo netstat -tulpn` Show servers and port listenning  
+`sudo ss -tulpn` Show servers and port listenning (socket statistics)  
 
 **disk usage**  
 Trier par taille, plus grand en premier:  
