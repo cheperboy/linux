@@ -60,8 +60,28 @@ allow ssh, samba, 5007tcp
 
 * `sudo ufw allow 2222/tcp` - Enable tcp ssh port 2222 
 
-## SSH Key for github
-### Create public key
+## SSH keys
+### SSH keys stored on a host
+[source](https://unix.stackexchange.com/questions/439467/what-is-the-difference-between-etc-ssh-and-ssh)  
+`/etc/ssh` provides configuration for the system: default configuration for users (`/etc/ssh/ssh_config`), and configuration for the daemon (`/etc/ssh/sshd_config`). The various host files in `/etc/ssh` are used by the daemon: they contain the host keys, which are used to identify the server — in the same way that users are identified by key pairs (stored in their home directory), servers are also identified by key pairs. Multiple key pairs are used because servers typically offer multiple types of keys: RSA, ECDSA, and Ed25519 in your case. (Users can also have multiple keys.)
+
+The various key files are used as follows:
+
+* your private key, if any, is used to identify you to any server you’re connecting to (it must then match the public key stored in the server’s authorized keys for the account you’re trying to connect to);
+
+* the server’s private key is used by the client to identify the server; such identities are stored in `~/.ssh/known_hosts`, and if a server’s key changes, SSH will complain about it and disable certain features to mitigate man-in-the-middle attacks;
+
+* your public key file stores the string you need to copy to remote servers (in `~/.ssh/authorized_keys`); it isn’t used directly;
+
+* the server’s public key files store strings you can copy to your known hosts list to pre-populate it; it also isn’t used directly.
+
+The last part isn’t used all that often; the default SSH model is known as “TOFU” (trust on first use): a connection is trusted by default the first time it’s used, and SSH only cares about unexpected changes. In some cases though it’s useful to be able to trust the first connection too: a server’s operator can communicate the server’s public keys, and users can add these to their known hosts before the first connection.
+
+See the [ssh_config](https://man.openbsd.org/ssh_config) and [sshd_config](https://man.openbsd.org/ssh_config) manpages for details (man ssh_config and man sshd_config on your system). The format used for known hosts is described in the sshd manpage.
+
+
+### Configure SSH Key for github
+#### Create public key
 see [tuto](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 **Check if keys already exist**  
@@ -84,7 +104,7 @@ Useful commands:
 To delete all cached keys before `ssh-add -D`  
 To check your saved keys `ssh-add -l`  
 
-### Modify ssh config
+#### Modify ssh config
 `nano cd ~/.ssh/config`  
 
 	# Github cheper account
@@ -96,7 +116,7 @@ To check your saved keys `ssh-add -l`
 
 `IdentitiesOnly yes` may be required if multiple id_rsa files exists on the system. This option will prevent the SSH default behavior of sending the identity file matching the default filename for each protocol. If you have a file named ~/.ssh/id_rsa that will get tried BEFORE your ~/.ssh/id_rsa.github without this option.  
 
-### Modify Git config  
+#### Modify Git config  
 `git config --global user.name "cheper"`  
 `git config --global user.email "my_email@gmail.com"`  
 
@@ -104,28 +124,42 @@ Inside the local directory of the git repo named 'linux'
 `git remote set-url origin git@github.com:cheper/linux.git`  
 This will update the file .git/config to use ssh protocol instead of https.  
 
-# GnuPG
+### GnuPG
+GPG is used on linux to encrypt a file with password.  
+Android app to decrypt file: OpenKeyChain.  
 
 Install `sudo apt install gnupg`
-`-a --armor`		ASCI output (can be sent via email)  
+`-a --armor`		ASCI output (so the file can be sent via email)  
 `-c --symmetric`	Encrypt with simple password (symmetric, no public/private key)  
 `-d --decrypt`		Decrypt  
 `-o --output`		file output instead of stdout/console  
 `--no-symkey-cache` Ne pas conserver le mot de passe pendant la session
 
-## Encrypt (symmetric)
-
+#### Encrypt (symmetric)
 `gpg -c -a file.txt`
 `gpg --symmetric --armor file.txt`
 
-## Decrypt
-
+#### Decrypt
 `gpg -d file.txt.gpg` output to console  
 `gpg -o file.txt -d file.txt.gpg` output to a file  
 `cat file.txt.gpg | gpg -d`  
 
-## Gedit shortcut
+#### Gedit shortcut
+Add script in gedit to encrypt/decryt file with keyboard shortcut.
 
 `Ctrl + Maj + E` Encrypt (symmetric)
+
+``` bash
+	#!/bin/bash
+	stdin=$(cat)
+	echo "$stdin" | gpg --symmetric --armor
+```
+
 `Ctrl + Maj + D` Decrypt
+
+``` bash
+	#!/bin/bash
+	stdin=$(cat) 
+	echo "$stdin" | gpg -d
+```
 

@@ -17,6 +17,7 @@ theme:
 #     - toc.integrate    
 nav:
     - Home: index.md
+    - Server Admin: server_admin.md
     - Bash: bash.md
     - Backup: backup.md
     - Raspberry install OS: raspberry_install_raspbian.md
