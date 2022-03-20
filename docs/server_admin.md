@@ -1,11 +1,35 @@
 ## ssh
 
-*Configure ssh keys*  
+### Configure ssh keys
 
 * https://kb.iu.edu/d/aews
 * https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/
 * https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
 	
+### Understand key management
+
+[![https://www.ssh.com](img/ssh_key_pair.jpg)](https://www.ssh.com/academy/ssh/key)
+
+*** Generating and sharing keys ***  
+The client generate its own key pair.  
+- Its private key shal remain private, not comprimized, not duplicated elswhere. it should be secured with a passphrase to guarantee that only the owner can use it.  
+- The client copies its public key on the server (using the tool ssh-copy-id). When the key is copied, the server trusts the client. It will then consider the client key an "authorized_key".  
+
+
+*** Remote login ***    
+The client execute ssh to server hostname using a specific username (the one associated with the key).  
+The server uses the public key to encrypt a message that the client will decrypt with its private key. The client send back this message to the server. the server knows the client realy owns its private key (the identity of the client is confirmed).  
+
+During the first login, the client stored the server's pub_key to remember this server.  
+
+*** Key management ***    
+A client machine (a personal computer) has typically:
+- One private / public key pair (stored in id_rsa, id_rsa.pub)
+- Every server known bu the client has its public key stored in "know_hosts"
+
+A server machine has typically:
+- One private / public key pair (stored in id_rsa, id_rsa.pub)
+- A list of public keys, each one belongs to a client autorized to acces the server, stored in "authorized_keys" 
 
 ## webmin
 

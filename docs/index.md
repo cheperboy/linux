@@ -173,30 +173,6 @@ From Windows PC
 `\\server_ip\samba_share_name`
 
 
-
-## Administration
-
-### ssh
-
-*Configure ssh keys*  
-
-* https://kb.iu.edu/d/aews
-* https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/
-* https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
-	
-### webmin
-
-installation (ubuntu 18)
-
-``` bash
-sudo sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
-wget -qO - http://www.webmin.com/jcameron-key.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install webmin
-sudo ufw allow 10000/tcp
-```
-[https://localhost:10000](https://localhost:10000)
-
 ## Security
 
 ### Firewall (UFW)
