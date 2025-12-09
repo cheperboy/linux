@@ -75,6 +75,11 @@ supprimer les snaps inutiles
 	files 644  
 	directory 755 (execute means ability to cd into the directory)
 
+To se permission  
+`stat dir/`  
+To change permission  
+`chmod 775 /dir`  
+
 To change all the directories to 755 (drwxr-xr-x):  
 `find /opt/lampp/htdocs -type d -exec chmod 755 {} \;`  
 To change all the files to 644 (-rw-r--r--):  
