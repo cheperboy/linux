@@ -47,8 +47,11 @@ Exemple
 `/media/disk1/data/` est le point de montage d'un disque avec répertoire `data/`  
 `/var/lib/motioneye` est un dossier dans lequel on veut faire apparaitre le répertoire `data/` du disque.
 on utilise la commande:  
+
 	mount --bind /media/disk1/data/  /var/lib/motioneye/
+	
 ou dans fstab on ajoute  
+
 	/media/disk1/data/    /var/lib/motioneye/    bind     defaults,bind    0    0
 
 **copy / moove**  
