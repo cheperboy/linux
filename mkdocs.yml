@@ -47,8 +47,9 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
   - meta
-  - markdown_include.include:
-      base_path: scripts
+# Commented 10/12/2025 cause compilation failed
+#  - markdown_include.include:
+#      base_path: scripts
 
 extra_css:
   - stylesheets/extra.css
