@@ -39,9 +39,17 @@ Trier par taille, plus grand en premier:
 `sudo fdisk -l` liste les partitions (avec secteurs de début/fin)  
 
 **Mounts**  
-`findmnt --fstab --evaluate` show fstab content with options
-`mount` show devices currently mounted
+`findmnt --fstab --evaluate` show fstab content with options `mount` show devices currently mounted  
 
+**Bind** 
+Permet de monter un sous-dossier (déja monté) dans un autre dossier (déja monté).
+Exemple
+`/media/disk1/data/` est le point de montage d'un disque avec répertoire `data/`  
+`/var/lib/motioneye` est un dossier dans lequel on veut faire apparaitre le répertoire `data/` du disque.
+on utilise la commande:  
+	mount --bind /media/disk1/data/  /var/lib/motioneye/
+ou dans fstab on ajoute
+	/media/disk1/data/    /var/lib/motioneye/    bind     defaults,bind    0    0
 
 **copy / moove**  
 `cp -r source/ dest/` copie le répertoir “source” et son contenu dans le répertoire “dest”. résultat: il existe un chemin `dest/source/file.txt`  
