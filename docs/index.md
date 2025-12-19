@@ -196,6 +196,10 @@ Restart service
 From Windows PC  
 `\\server_ip\samba_share_name`
 
+To create a samba user ('username' is the name of an existing system user) 
+
+	sudo smbpasswd -a username
+
 
 ## Security
 
