@@ -44,7 +44,10 @@ sudo ufw allow 10000/tcp
 ```
 [https://localhost:10000](https://localhost:10000)
 
-
+## serveur monitoring
+	
+	nmon
+	glances
 
 ## x11vnc 
 
