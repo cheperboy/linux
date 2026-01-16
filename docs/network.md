@@ -2,7 +2,8 @@
 
 ### liste des interface et leur configuration
 
-`ip addr`
+`ip addr`  
+`ip addr show eno1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'` print lan ip of the machine  
 
 ### socket stat
 
