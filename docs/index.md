@@ -35,6 +35,7 @@ Trier par taille, plus grand en premier:
 
 **Partitions**  
 `lsblk` liste les partitions (attention: ne montre pas l'ordre réelle sur le disque)  
+`lsblk -a -o NAME,LABEL,MOUNTPOINT,SIZE,FSUSE%,MODEL,UUID`  
 `blkid` UUID des partitions  
 `sudo fdisk -l` liste les partitions (avec secteurs de début/fin)  
 
