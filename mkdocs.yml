@@ -20,6 +20,7 @@ nav:
     - Server Admin: server_admin.md
     - Bash: bash.md
     - Backup: backup.md
+    - Docker: docker.md
     - Raspberry install OS: raspberry_install_raspbian.md
     - Dot Files: dotfiles.md
     - Linux tools: linux_tools.md
