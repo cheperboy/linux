@@ -7,4 +7,10 @@ indide the project dir:
 `docker-compose ps` list processus  
 `docker-compose logs -f prometheus` check live log  
 
+## docker
+
+`docker volume ls` list volumes  
+
+
+
 
