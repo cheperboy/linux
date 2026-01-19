@@ -10,7 +10,7 @@ indide the project dir:
 ## docker
 
 `docker volume ls` list volumes  
-
+`docker volume inspect volume-name` give the path of a volume 
 
 
 
