@@ -37,6 +37,19 @@ Pull latest changes from origin and merge
     git commit -am "message"
     git push
 	
+
+**Force update**
+git cancel local modifications and fetch from origin:
+```
+git fetch origin
+git reset --hard origin/master
+git clean -dfx
+```
+
+git overwrite origin (github) with local  
+`git push --force`
+
+	
 ## Colortail
 
 like tail with color

@@ -59,6 +59,7 @@ Change "scarlet" or "ruby" or "puce" to "red"
     ----------------------
     grep 'hello.*world' *.log       # list all lines containing "Hello, world" (-i ignore case)
     grep -r 'foo' /home/mydir       # search recursively in mydir/
+    grep -rni "text" *              # search recursively in current dir. non case sensitive. print line numbers.
     grep -C 2 'foo' test*.log       # print context around the match
 
     regular expressions

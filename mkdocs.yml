@@ -5,7 +5,7 @@ docs_dir : docs/
 
 # theme: readthedocs
 theme:
-  name: 'material'
+  name: 'readthedocs'
   language: 'en'
   palette:
     primary: 'indigo'
@@ -32,14 +32,14 @@ nav:
     - Kivy : kivy.md
     - Python script template: python_script_template.md
     - Network: network.md
-    - Divers: gmvault.md
+    - gmail.md
     - links.md
 
 
 markdown_extensions:
   - admonition
   - codehilite
-  - pymdownx.critic
+#  - pymdownx.critic
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.magiclink
@@ -48,9 +48,9 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
   - meta
-# Commented 10/12/2025 cause compilation failed
-#  - markdown_include.include:
-#      base_path: scripts
+# Commented 10/12/2025 cause compilation failed ---- /!!\
+  - markdown_include.include:
+      base_path: scripts
 
 extra_css:
   - stylesheets/extra.css
