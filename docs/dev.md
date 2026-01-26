@@ -1,6 +1,17 @@
 # Dev tools
 
 ## Git
+** configuation du dépot local pour fonctionner avec clé ssh**
+
+    nano .git/config
+
+remplacer 
+
+    url = https://github.com/cheperboy/linux.git
+
+par   
+
+    url = git@github.com:cheperboy/linux.git
 
 [interractive commands](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
 
