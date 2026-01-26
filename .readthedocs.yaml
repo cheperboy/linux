@@ -7,12 +7,14 @@ build:
   # We recommend using a requirements file for reproducible builds.
   # This is just a quick example to get started.
   # https://docs.readthedocs.io/page/guides/reproducible-builds.html
-  jobs:
-    pre_install:
-      - pip install mkdocs-material
-      - pip install markdown_include
-      - pip install pymdown-extensions
-
+#  jobs:
+#    pre_install:
+#      - pip install mkdocs-material
 
 mkdocs:
   configuration: mkdocs.yml
+  
+python:
+  install:
+  - requirements: requirements.txt
+  
