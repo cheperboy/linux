@@ -53,14 +53,7 @@ print_all_args(1, 2, foo='bar', toto='titi', *some_dict)
 ## Path
 
 ``` python
-{!python_path.py!}
-```
-``` python
-{!../scripts/python_path.py!}
-```
-
-``` title="python_path.py"
---8<-- "python_path.py"
+{!scripts/python_path.py!}
 ```
 
 

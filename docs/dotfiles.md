@@ -2,11 +2,11 @@
 Set the base PATH (raspbian)
 
 ``` sh
-{!dotfiles/zshenv!}
+{!scripts/dotfiles/zshenv!}
 ```
 
 ## cheperboy_profile.sh
 
 ``` sh
-{!dotfiles/.cheperboy_profile.sh!}
+{!scripts/dotfiles/.cheperboy_profile.sh!}
 ```

@@ -1,3 +1,3 @@
 ``` python
-{!python_template.py!}
+{!scripts/python_template.py!}
 ```
