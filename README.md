@@ -5,7 +5,7 @@
 ### local install
 
     pip install mkdocs
-    pip install -r docs/requirements.txt
+    pip install -r requirements.txt
 
 
 ### Run mkdoc local

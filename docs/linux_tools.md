@@ -65,7 +65,7 @@ Shell config
 	alias bcat="highlight -O ansi --syntax=bash"
 
 
-## Logiciels de base
+## Logiciels de bureau
 `sound-juicer` mp3 ripper  
 `handbrake` dvd ripper  
 `mkusb` usb bootable persistent https://doc.ubuntu-fr.org/mkusb  

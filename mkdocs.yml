@@ -3,7 +3,7 @@ repo_url : https://github.com/cheperboy/linux/
 docs_dir : docs/ 
 # dev_addr: 0.0.0.0:8002 # commented because fail compilation in production(readthedocs)
 
-# theme: readthedocs
+#theme: readthedocs
 theme:
   name: 'readthedocs'
   language: 'en'
@@ -16,8 +16,11 @@ theme:
 #  features:
 #     - toc.integrate    
 nav:
-    - Home: index.md
-    - Server Admin: server_admin.md
+    - index.md
+    - server-ubuntu.md
+    - server-admin.md
+    - server-security.md
+    - network.md
     - Bash: bash.md
     - Backup: backup.md
     - Docker: docker.md
@@ -25,13 +28,11 @@ nav:
     - Dot Files: dotfiles.md
     - Linux tools: linux_tools.md
     - Raspberry hardware: raspberry.md
-    - Security: security.md
     - Dev tools: dev.md
     - Web: web.md
     - Python : python.md
     - Kivy : kivy.md
     - Python script template: python_script_template.md
-    - Network: network.md
     - gmail.md
     - links.md
 

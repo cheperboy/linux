@@ -1,7 +1,7 @@
 # Dev tools
 
 ## Git
-** configuation du dépot local pour fonctionner avec clé ssh**
+**configuation du dépot local pour fonctionner avec clé ssh**
 
     nano .git/config
 
