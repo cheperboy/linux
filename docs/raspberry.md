@@ -26,7 +26,7 @@ pi@raspberrypi:~/$ i2cdetect -y 1
 ```
 
 ## 1 Wire 
-[^1]: Mainly copied from https://pinout.xyz/pinout/1_wire
+[Mainly copied from https://pinout.xyz/pinout/1_wire](https://pinout.xyz/pinout/1_wire)
 
 To enable the one-wire interface add the following line to `/boot/config.txt`  
 `dtoverlay=w1-gpio`

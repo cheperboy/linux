@@ -2,13 +2,9 @@
 
 ## tutorial
 
-https://tech.layer-x.com/monitoring-mikrotik-with-grafana-and-prometheus-a-complete-setup-guide/
-
-https://dernasherbrezon.com/en/posts/prometheus-monitoring-mikrotik/
-
-MIB Browser:  
-
-https://mibs.observium.org/mib/MIKROTIK-MIB/#Power
+- [monitoring-mikrotik-with-grafana-and-prometheus-a-complete-setup-guide](https://tech.layer-x.com/monitoring-mikrotik-with-grafana-and-prometheus-a-complete-setup-guide/)
+- [prometheus-monitoring-mikrotik](https://dernasherbrezon.com/en/posts/prometheus-monitoring-mikrotik/)
+- [MIB Browser](https://mibs.observium.org/mib/MIKROTIK-MIB/#Power)
 
 ## stack
 
@@ -33,6 +29,6 @@ https://mibs.observium.org/mib/MIKROTIK-MIB/#Power
 ## interfaces
 http://localhost:9116/snmp  
 http://localhost:9090/graph  
-http://montlevic.fr:3000/  
+http://WAN_IP:3000/  
 
 

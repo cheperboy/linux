@@ -51,8 +51,27 @@ Test with :
 
     echo "body of the email" | mail -s "subject" root
 
+## App install
 
-## After Install Server
+### Docker compose
+
+[tutorial](https://docs.docker.com/engine/install/ubuntu/)  
+
+`sudo apt install docker-compose`
+
+### python3
+
+venv in `~/pyenv`  
+installed with `sudo apt install -y python3-virtualenv`  
+```
+source ~/pyenv/bin/activate
+pip install some-package
+```
+
+
+
+
+## Basic security tips
 
 ### Hardening tips
 * [https://askubuntu.com/questions/151440/important-things-to-do-after-installing-ubuntu-server](https://askubuntu.com/questions/151440/important-things-to-do-after-installing-ubuntu-server)
