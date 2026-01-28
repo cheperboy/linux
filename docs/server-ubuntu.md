@@ -83,7 +83,8 @@ pip install some-package
 * [https://askubuntu.com/questions/151440/important-things-to-do-after-installing-ubuntu-server](https://askubuntu.com/questions/151440/important-things-to-do-after-installing-ubuntu-server)
 
 ### usefull service to install
-`gedit python3-virtualenv curl whois nmap htop python3-virtualenv nmap fail2ban avahi-utils ssh unattended-upgrades mailutils inetutils-traceroute certbot`
+- minimal: `gedit python3-venv curl htop fail2ban ssh nmap unattended-upgrades`
+- more: `whois nmap htop avahi-utils mailutils inetutils-traceroute certbot`
 
 
 ### Disable root user:
