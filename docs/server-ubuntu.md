@@ -62,7 +62,9 @@ Test with :
 ### python3
 
 venv in `~/pyenv`  
-installed with `sudo apt install -y python3-virtualenv`  
+installation : `sudo apt install -y python3-virtualenv`    
+create a virtual env: `python3 -m venv myvenv`  
+Activate :
 ```
 source ~/pyenv/bin/activate
 pip install some-package
