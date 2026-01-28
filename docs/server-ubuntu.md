@@ -63,7 +63,11 @@ Test with :
 
 venv in `~/pyenv`  
 installation : `sudo apt install -y python3-virtualenv`    
-create a virtual env: `python3 -m venv myvenv`  
+create a virtual env: 
+```
+cd
+python3 -m venv pyenv  
+```
 Activate :
 ```
 source ~/pyenv/bin/activate
