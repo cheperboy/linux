@@ -12,7 +12,6 @@
 `sudo service prometheus status`  
 `sudo service grafana-server status`  
 
-`sudo grafana-cli admin reset-admin-password picasso`  
 
 ## conf files
 
