@@ -2,7 +2,7 @@
 
 ## installation
 
-`sudo apt install docker-compose`
+`sudo apt install docker-compose`  
 `sudo usermod -aG docker $USER`
 
 ## docker compose
