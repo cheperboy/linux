@@ -2,8 +2,8 @@
 
 ## installation
 
-sudo apt install docker-compose
-sudo usermod -aG docker $USER
+`sudo apt install docker-compose`
+`sudo usermod -aG docker $USER`
 
 ## docker compose
 indide the project dir:  
