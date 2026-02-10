@@ -26,6 +26,13 @@ monitoring bandwidth usage on a specific network interface.
 `sudo iftop`  
 `bmon`  
 
+### iperf
+
+mesure bande passante entre deux hôtes.  
+install:  `apt install iperf`  
+Côté server: `iperf -s`  
+Côté client: `iperf -c server.local`  
+`server.local` : hostname ou ip  
 
 ## Réseau IP v4
 ## CIDR adress range notation
