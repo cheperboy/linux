@@ -7,3 +7,4 @@ alias cpc="xclip -sel c < " # use it like this: cpc file_name
 alias myip="ip addr show eno1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'"
 alias ccat="highlight -O ansi --force"
 alias bcat="highlight -O ansi --syntax=bash"
+alias pyenv="source ~/pyenv/bin/activate"
