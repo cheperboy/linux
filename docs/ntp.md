@@ -10,10 +10,10 @@ cette tâche est désormais assurée par `timedatectl` qui est installé par dé
 | ntpd (partie client) | timesyncd | | 
 
 ## Timesyncd
-`Timesyncd` se substitue à la partie client de `ntpd`. 
-`Timesync` vérifie l'heure de référence à intervalles réguliers et assure le maintien de la synchronisation des horloges. 
-Il effectue également le stockage local des synchronisations, ainsi leur prise en compte est assurée en cas de réinitialisation.
+`timesyncd` se substitue à la partie client de `ntpd`.   
+`timesync` vérifie l'heure de référence à intervalles réguliers et assure le maintien de la synchronisation des horloges.   
+Il effectue également le stockage local des synchronisations, ainsi leur prise en compte est assurée en cas de réinitialisation.  
 
 ## timedatectl 
-donne la conf actuelle de l'heure
-```timedatectl status```
+donne la conf actuelle de l'heure  
+`timedatectl status`
