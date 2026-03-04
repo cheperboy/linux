@@ -3,15 +3,25 @@ installation : `sudo apt install chrony`
 Fichier de config : `/etc/chrony/chrony.conf`  
 vérifier l'exécution du service : `sudo systemctl status chronyd`  
 redémarrer : `sudo systemctl restart chronyd`  
+
+Vérifier qu'une adresse du réseau est bien autorisée à accéder au server NTP chrony (d'après la conf allow/deny du fichier de conf) :
+`sudo chronyc accheck 192.168.0.1`  
+
 Statut :  
-`chronyc sources -v`  
-`chronyc tracking`  
+```
+chronyc sources -v 
+chronyc tracking  
+chronyc activity
+
+
+
+```
 
 Pour configurer en tant que server :  
 ```
 # Configuration en tant que serveur NTP (pour réseau local)
-allow 192.168.0.0/24
 deny all
+allow 192.168.0.0/24
 local stratum 10
 ```
 
