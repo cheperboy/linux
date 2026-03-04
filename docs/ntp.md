@@ -20,9 +20,6 @@ allow 192.168.0.0/24
 local stratum 10
 ```
 
-Vérifier qu'une adresse du réseau est bien autorisée à accéder au server NTP chrony (d'après la conf allow/deny du fichier de conf) :  
-`sudo chronyc accheck 192.168.0.1`  
-
 ## client
 donne des information sur la bonne connection au server ntp distant
 `sudo chronyc ntpdata` tous les serveur configurés
@@ -33,11 +30,18 @@ Statut :
 chronyc sources -v 
 chronyc tracking  
 chronyc activity
-
 ```
 ## client (réseau local)
 la directive server pointe vers le serveur local avec les paramètres suivants
 server 192.168.0.130 minpoll 2 maxpoll 2 xleave
+
+## debug réseau
+côté client distant, tester si le serveur est accessible :  
+`sudo /usr/bin/nmap -sU -p 123 localhost`  
+
+côté server, vérifier qu'une adresse du réseau est bien autorisée à accéder au server NTP chrony (d'après la conf allow/deny du fichier de conf) :  
+`sudo chronyc accheck 192.168.0.1`  
+
 
 
 ## Ajuster l'horloge du système
