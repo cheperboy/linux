@@ -15,10 +15,12 @@ cette tâche est désormais assurée par `timedatectl` qui est installé par dé
 `timesyncd` se substitue à la partie client de `ntpd`.   
 `timesync` vérifie l'heure de référence à intervalles réguliers et assure le maintien de la synchronisation des horloges.   
 Il effectue également le stockage local des synchronisations, ainsi leur prise en compte est assurée en cas de réinitialisation.  
+sudo apt install -V systemd-timesyncd
 
 ## timedatectl 
-donne la conf actuelle de l'heure  
-`timedatectl status`
+fichier de conf: `/etc/systemd/timesyncd.conf`  
+Donne la conf actuelle de l'heure `timedatectl status`  
+Activer la synchronisation: `timedatectl set-ntp true`  
 
 ## Configuration du serveur /etc/ntpd.conf
 Restreindre les requêtes au réseau local:  
