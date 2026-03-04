@@ -4,12 +4,16 @@
 Ubuntu a longtemps utilisé `ntpdate` et `ntpd` pour ajuster l'horloge interne des systèmes d'exploitation, 
 cette tâche est désormais assurée par `timedatectl` qui est installé par défaut dans votre distribution.
 
+| ancien | nouveau | commentaire |
+| ---    | ---     | ---         |
+| ntpdate | timedatectl | client ntp | 
+| ntpd (partie client) | timesyncd | | 
+
+## Timesyncd
 `Timesyncd` se substitue à la partie client de `ntpd`. 
 `Timesync` vérifie l'heure de référence à intervalles réguliers et assure le maintien de la synchronisation des horloges. 
 Il effectue également le stockage local des synchronisations, ainsi leur prise en compte est assurée en cas de réinitialisation.
 
-| ancien | nouveau | commentaire |
-| ---    | ---     | ---         |
-| ntpdate | timedatectl | | 
-| ntpd (partie client) | Timesyncd | | 
-
+## timedatectl 
+donne la conf actuelle de l'heure
+```timedatectl status```
