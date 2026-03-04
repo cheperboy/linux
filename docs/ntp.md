@@ -17,3 +17,8 @@ Il effectue également le stockage local des synchronisations, ainsi leur prise 
 ## timedatectl 
 donne la conf actuelle de l'heure  
 `timedatectl status`
+
+## Configuration du serveur /etc/ntpd.conf
+Restreindre les requêtes au réseau local:  
+`restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap`  
+
