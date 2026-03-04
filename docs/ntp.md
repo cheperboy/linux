@@ -7,7 +7,7 @@ cette tâche est désormais assurée par `timedatectl` qui est installé par dé
 | ancien | nouveau | commentaire |
 | ---    | ---     | ---         |
 | ntpdate | timedatectl | client ntp | 
-| ntpd (partie client) | timesyncd | | 
+| ntpd (partie client) | timesyncd | sudo apt install -V systemd-timesyncd | 
 
 /!\ Si ntpdate ou ntpd sont installés, timedatectl se désactive pour permettre à l'utilisateur d'utiliser l'ancienne configuration. -> vérifier que ces anciens services ne sont pas installés.
 
