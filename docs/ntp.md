@@ -1,5 +1,8 @@
 # Chrony
-installation : `sudo apt install chrony`  
+installer et configurer chrony.  
+la bonne activation du service de mise à jour de l'heure du système (par démon ntp de la machine) peut être vérifié avec `timedatectl status`  
+
+Installation : `sudo apt install chrony`  
 Fichier de config : `/etc/chrony/chrony.conf`  
 vérifier l'exécution du service : `sudo systemctl status chronyd`  
 redémarrer : `sudo systemctl restart chronyd`  
@@ -46,7 +49,7 @@ côté server, vérifier qu'une adresse du réseau est bien autorisée à accéd
 
 
 
-## Ajuster l'horloge du système
+# Anciens programmes NTP
 
 Ubuntu a longtemps utilisé `ntpdate` et `ntpd` pour ajuster l'horloge interne des systèmes d'exploitation, 
 cette tâche est désormais assurée par `timedatectl` qui est installé par défaut dans votre distribution.
