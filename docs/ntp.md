@@ -1,9 +1,25 @@
 # Chrony
 installation : `sudo apt install chrony`  
+Fichier de config : `/etc/chrony/chrony.conf`  
 vérifier l'exécution du service : `sudo systemctl status chronyd`  
+redémarrer : `sudo systemctl restart chronyd`  
 Statut :  
 `chronyc sources -v`  
 `chronyc tracking`  
+
+Pour configurer en tant que server :  
+```
+# Configuration en tant que serveur NTP (pour réseau local)
+allow 192.168.0.0/24
+deny all
+local stratum 10
+```
+
+pour configurer les logs:
+```
+# log
+log tracking measurements statistics
+```
 
 
 
