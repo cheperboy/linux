@@ -11,13 +11,12 @@ cette tâche est désormais assurée par `timedatectl` qui est installé par dé
 
 /!\ Si ntpdate ou ntpd sont installés, timedatectl se désactive pour permettre à l'utilisateur d'utiliser l'ancienne configuration. -> vérifier que ces anciens services ne sont pas installés.
 
-## Timesyncd
+## client NTP : Timesyncd / timedatectl 
 `timesyncd` se substitue à la partie client de `ntpd`.   
 `timesync` vérifie l'heure de référence à intervalles réguliers et assure le maintien de la synchronisation des horloges.   
 Il effectue également le stockage local des synchronisations, ainsi leur prise en compte est assurée en cas de réinitialisation.  
-sudo apt install -V systemd-timesyncd
+installation `sudo apt install -V systemd-timesyncd`  
 
-## timedatectl 
 Vérifier que le service est actif : `systemctl status systemd-timesyncd.service`  
 Fichier de conf: `/etc/systemd/timesyncd.conf`  copié dans `/etc/systemd/timesyncd.conf.d/toto` 
 Vérifier l'ensemble des fichiers de config: `systemd-analyze cat-config systemd/timesyncd.conf`  
