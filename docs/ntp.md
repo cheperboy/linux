@@ -20,13 +20,16 @@ donne la conf actuelle de l'heure
 
 ## Configuration du serveur /etc/ntpd.conf
 Restreindre les requêtes au réseau local:  
+
 `restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap`  
 
 # Test
-Un moyen simple de voir s'il y a un broadcast NTP dans votre réseau local (généralement le router). A noter que le serveur n'est pas forcément configuré en broadcast, ça peut être les clients locaux qui sont configurés en pooling (en général).
+Un moyen simple de voir s'il y a un broadcast NTP dans votre réseau local (généralement le router). A noter que le serveur n'est pas forcément configuré en broadcast, ça peut être les clients locaux qui sont configurés en pooling (en général).  
 `sudo tcpdump -n "broadcast or multicast" | grep NTP`  
-Pour voir si des clients se connectent à votre serveur NTP :
 
-  ntpq -c mrulist
+Pour voir si des clients se connectent à votre serveur NTP :
+`ntpq -c mrulist`
 
   
+
+
