@@ -19,8 +19,11 @@ sudo apt install -V systemd-timesyncd
 
 ## timedatectl 
 fichier de conf: `/etc/systemd/timesyncd.conf`  
-Donne la conf actuelle de l'heure `timedatectl status`  
+Vérifier la conf actuelle de l'heure 
+`timedatectl status`  
+`timedatectl timesync-status`  
 Activer la synchronisation: `timedatectl set-ntp true`  
+`Choisir un fuseau horaire: timedatectl set-timezone Europe/Paris`  
 
 ## Configuration du serveur /etc/ntpd.conf
 Restreindre les requêtes au réseau local:  
