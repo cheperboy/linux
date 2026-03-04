@@ -35,7 +35,9 @@ chronyc tracking
 chronyc activity
 
 ```
-
+## client (réseau local)
+la directive server pointe vers le serveur local avec les paramètres suivants
+server 192.168.0.130 minpoll 2 maxpoll 2 xleave
 
 
 ## Ajuster l'horloge du système
