@@ -19,6 +19,8 @@ deny all
 allow 192.168.0.0/24
 local stratum 10
 ```
+voir les clients connectés :  
+`sudo chronyc clients`
 
 ## client
 donne des information sur la bonne connection au server ntp distant
