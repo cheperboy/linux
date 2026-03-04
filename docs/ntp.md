@@ -9,6 +9,8 @@ cette tâche est désormais assurée par `timedatectl` qui est installé par dé
 | ntpdate | timedatectl | client ntp | 
 | ntpd (partie client) | timesyncd | | 
 
+/!\ Si ntpdate ou ntpd sont installés, timedatectl se désactive pour permettre à l'utilisateur d'utiliser l'ancienne configuration. -> vérifier que ces anciens services ne sont pas installés.
+
 ## Timesyncd
 `timesyncd` se substitue à la partie client de `ntpd`.   
 `timesync` vérifie l'heure de référence à intervalles réguliers et assure le maintien de la synchronisation des horloges.   
