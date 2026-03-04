@@ -18,8 +18,10 @@ Il effectue également le stockage local des synchronisations, ainsi leur prise 
 sudo apt install -V systemd-timesyncd
 
 ## timedatectl 
-fichier de conf: `/etc/systemd/timesyncd.conf`  
-Vérifier la conf actuelle de l'heure 
+Vérifier que le service est actif : `systemctl status ntp.service`  
+Fichier de conf: `/etc/systemd/timesyncd.conf`  
+Vérifier l'ensemble des fichiers de config: `systemd-analyze cat-config systemd/timesyncd.conf`  
+Vérifier la conf actuelle de l'heure  
 `timedatectl status`  
 `timedatectl timesync-status`  
 Activer la synchronisation: `timedatectl set-ntp true`  
