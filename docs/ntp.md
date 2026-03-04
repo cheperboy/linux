@@ -4,19 +4,14 @@ Fichier de config : `/etc/chrony/chrony.conf`
 vérifier l'exécution du service : `sudo systemctl status chronyd`  
 redémarrer : `sudo systemctl restart chronyd`  
 
-Vérifier qu'une adresse du réseau est bien autorisée à accéder au server NTP chrony (d'après la conf allow/deny du fichier de conf) :
-`sudo chronyc accheck 192.168.0.1`  
-
-Statut :  
+## configuration
+pour configurer les logs:
 ```
-chronyc sources -v 
-chronyc tracking  
-chronyc activity
-
-
-
+# log
+log tracking measurements statistics
 ```
 
+## serveur
 Pour configurer en tant que server :  
 ```
 # Configuration en tant que serveur NTP (pour réseau local)
@@ -25,10 +20,20 @@ allow 192.168.0.0/24
 local stratum 10
 ```
 
-pour configurer les logs:
+Vérifier qu'une adresse du réseau est bien autorisée à accéder au server NTP chrony (d'après la conf allow/deny du fichier de conf) :  
+`sudo chronyc accheck 192.168.0.1`  
+
+## client
+donne des information sur la bonne connection au server ntp distant
+`sudo chronyc ntpdata` tous les serveur configurés
+`sudo chronyc ntpdata ntp.xxx.com` un serveur en particulier parmi ceux configurés
+
+Statut :  
 ```
-# log
-log tracking measurements statistics
+chronyc sources -v 
+chronyc tracking  
+chronyc activity
+
 ```
 
 
