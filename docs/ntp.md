@@ -1,3 +1,11 @@
+# Chrony
+installation : `sudo apt install chrony`  
+vérifier l'exécution du service : `sudo systemctl status chronyd`  
+Statut :  
+`chronyc sources -v`  
+`chronyc tracking`  
+
+
 
 ## Ajuster l'horloge du système
 
