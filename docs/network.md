@@ -1,13 +1,19 @@
 ## network commands
 
-### liste des interface et leur configuration
+### Commandes de base
 
-`ip addr`  
+`ip link show eno1` interface UP ?  
+`ip addr show eno1` IP Configurée ?   
 `ip addr show eno1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'` print lan ip of the machine  
-
+`ip addr` toutes les interfaces et leur configurations  
 `ip route` table de routage de la machine.  En général deux routes: default=route par défaut=adresse de la passerelle. puis l'adresse du réseau local.  
-`ping -c 3 192.168.1.1`  
+`ping -c 3 192.168.1.1` ping la passerelle.  
+`ping -c 2 8.8.8.8` ping DNS google.  
+`ping -c 2 github.com` vérifier la résolution de nom.  
+`nc -zv 192.168.1.254 22`  Tester le port TCP du serveur.  
+`curl -I http://192.168.1.254` Tester si le port HTTP répond.
 `traceroute github.com` visualiser le chemin d'un paquet vers un serveur.  
+`traceroute -T -p 443 github.com` Avec TCP sur port 443 (passe mieux les pare-feux)
 
 ### socket stat
 
