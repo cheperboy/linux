@@ -5,6 +5,10 @@
 `ip addr`  
 `ip addr show eno1 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'` print lan ip of the machine  
 
+`ip route` table de routage de la machine.  En général deux routes: default=route par défaut=adresse de la passerelle. puis l'adresse du réseau local.  
+`ping -c 3 192.168.1.1`  
+`traceroute github.com` visualiser le chemin d'un paquet vers un serveur.  
+
 ### socket stat
 
 `sudo ss -nltu`  
