@@ -53,11 +53,10 @@ Test with :
 
 ## App install
 
-### Docker compose
+### Docker
 
-[tutorial](https://docs.docker.com/engine/install/ubuntu/)  
-
-`sudo apt install docker-compose`
+[docker.com/engine/install/debian](https://docs.docker.com/engine/install/debian/)  
+[docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
 
 ### python3
 
