@@ -82,7 +82,7 @@ pip install some-package
 * [https://askubuntu.com/questions/151440/important-things-to-do-after-installing-ubuntu-server](https://askubuntu.com/questions/151440/important-things-to-do-after-installing-ubuntu-server)
 
 ### usefull service to install
-- minimal: `gedit python3-venv curl htop fail2ban ssh nmap unattended-upgrades`
+- minimal: `gedit python3-venv curl htop fail2ban ssh nmap unattended-upgrades highlight`
 - more: `whois nmap htop avahi-utils mailutils inetutils-traceroute certbot`
 
 
