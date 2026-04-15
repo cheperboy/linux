@@ -1,6 +1,6 @@
 ## Enable/disable gnome session (GDM)
 
-wiki.debian.org/GDM
+https://wiki.debian.org/GDM
 
 To set your system to always boot to a console rather than GDM:
 
