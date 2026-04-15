@@ -20,6 +20,7 @@ theme:
 nav:
     - index.md
     - server_debian_install.md
+    - server_debian_usage.md
     - server-ubuntu.md
     - server-admin.md
     - server-security.md
