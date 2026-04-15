@@ -14,4 +14,15 @@ To check the current boot target:
 
 ```systemctl get-default```
 
+To temporarily stop GDM:
+
+```systemctl stop gdm```
+
+To see the status of GDM:
+
+```systemctl status gdm```
+
+To start GDM manually:
+
+```systemctl start gdm```
 
