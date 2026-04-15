@@ -19,6 +19,7 @@ theme:
     - toc.integrate    
 nav:
     - index.md
+    - server_debian_install.md
     - server-ubuntu.md
     - server-admin.md
     - server-security.md
